@@ -1,0 +1,282 @@
+<div class="covering">
+  <app-heading></app-heading>
+  <div class="orderSec">
+    <h3>{{ "ORDER" | translate }}</h3>
+    <div class="forms" *ngIf="this.toggling === 'false'">
+      <form
+        id="send"
+        dir="rtl"
+        [formGroup]="orderForm"
+        (ngSubmit)="onSubmitOrder()"
+      >
+        <div class="col-xs-9 form-group">
+          <label for="username"
+            >{{ "username" | translate }} <span> *</span></label
+          >
+          <input
+            class="form-control input-lg"
+            type="text"
+            name="username"
+            id="name"
+            placeholder=""
+            formControlName="name"
+          />
+        </div>
+
+        <div class="col-xs-9 form-group">
+          <label for="companyName"
+            >{{ "companyName" | translate }} <span> *</span></label
+          >
+          <input
+            class="form-control input-lg"
+            type="text"
+            name="companyName"
+            id="companyName"
+            placeholder=""
+            formControlName="companyName"
+          />
+        </div>
+
+        <div class="col-xs-9 form-group">
+          <label for="field">{{ "field" | translate }} <span> *</span></label>
+          <input
+            class="form-control input-lg"
+            type="text"
+            name="field"
+            id="field"
+            placeholder=""
+            formControlName="field"
+          />
+        </div>
+
+        <div class="col-xs-9 form-group">
+          <label for="address"
+            >{{ "address" | translate }} <span> *</span></label
+          >
+          <input
+            class="form-control input-lg"
+            type="text"
+            name="address"
+            id="address"
+            placeholder=""
+            formControlName="address"
+          />
+        </div>
+
+        <div class="col-xs-9 form-group">
+          <label for="service"
+            >{{ "service" | translate }} <span> *</span></label
+          >
+          <select
+            class="form-control input-lg"
+            style="height: 47px !important"
+            (change)="changeCity($event)"
+            formControlName="service"
+          >
+            <option *ngFor="let service of services" [ngValue]="service">
+              {{ service }}
+            </option>
+          </select>
+        </div>
+        <div class="col-xs-12 form-group marginging">
+          <label for="otherService">{{ "otherService" | translate }}</label>
+          <input
+            class="form-control input-lg"
+            type="text"
+            name="otherService"
+            id="otherService"
+            placeholder=""
+            formControlName="otherService"
+          />
+        </div>
+
+        <div class="col-xs-12 form-group">
+          <label for="message"
+            >{{ "message" | translate }} <span> *</span></label
+          >
+          <textarea
+            class="form-control textaria input-lg"
+            type="text"
+            name="message"
+            id="message"
+            placeholder=""
+            formControlName="message"
+          >
+          </textarea>
+        </div>
+        <div class="col-xs-9 form-group">
+          <label for="phone">{{ "phone" | translate }} <span> *</span></label>
+          <input
+            class="form-control input-lg"
+            type="option"
+            name="phone"
+            id="phone"
+            placeholder=""
+            formControlName="phone"
+          />
+        </div>
+        <div class="col-xs-9 form-group">
+          <label for="email">{{ "email" | translate }} <span> *</span></label>
+          <input
+            class="form-control input-lg"
+            type="option"
+            name="email"
+            id="email"
+            placeholder=""
+            formControlName="email"
+          />
+        </div>
+
+        <div class="col-xs-6">
+          <button
+            class="contact-btn"
+            [disabled]="!orderForm.valid"
+            type="submit"
+            name="text"
+            value="Send"
+          >
+            {{ "SENDORDER" | translate }}
+          </button>
+        </div>
+      </form>
+    </div>
+    <div class="formsAr" *ngIf="this.toggling === 'true'">
+      <form
+        id="send"
+        dir="ltr"
+        [formGroup]="orderForm"
+        (ngSubmit)="onSubmitOrder()"
+      >
+        <div class="col-xs-9 form-group">
+          <label for="username"
+            >{{ "username" | translate }} <span> *</span></label
+          >
+          <input
+            class="form-control input-lg"
+            type="text"
+            name="username"
+            id="name"
+            placeholder=""
+            formControlName="name"
+          />
+        </div>
+
+        <div class="col-xs-9 form-group">
+          <label for="companyName"
+            >{{ "companyName" | translate }} <span> *</span></label
+          >
+          <input
+            class="form-control input-lg"
+            type="text"
+            name="companyName"
+            id="companyName"
+            placeholder=""
+            formControlName="companyName"
+          />
+        </div>
+
+        <div class="col-xs-9 form-group">
+          <label for="field">{{ "field" | translate }} <span> *</span></label>
+          <input
+            class="form-control input-lg"
+            type="text"
+            name="field"
+            id="field"
+            placeholder=""
+            formControlName="field"
+          />
+        </div>
+
+        <div class="col-xs-9 form-group">
+          <label for="address"
+            >{{ "address" | translate }} <span> *</span></label
+          >
+          <input
+            class="form-control input-lg"
+            type="text"
+            name="address"
+            id="address"
+            placeholder=""
+            formControlName="address"
+          />
+        </div>
+
+        <div class="col-xs-9 form-group">
+          <label for="service"
+            >{{ "service" | translate }} <span> *</span></label
+          >
+          <select
+            class="form-control input-lg"
+            style="height: 47px !important"
+            (change)="changeCity($event)"
+            formControlName="service"
+          >
+            <option *ngFor="let service of servicesAr" [ngValue]="service">
+              {{ service }}
+            </option>
+          </select>
+        </div>
+        <div class="col-xs-12 form-group marginging">
+          <label for="otherService">{{ "otherService" | translate }}</label>
+          <input
+            class="form-control input-lg"
+            type="text"
+            name="otherService"
+            id="otherService"
+            placeholder=""
+            formControlName="otherService"
+          />
+        </div>
+
+        <div class="col-xs-12 form-group">
+          <label for="message"
+            >{{ "message" | translate }} <span> *</span></label
+          >
+          <textarea
+            class="form-control textaria input-lg"
+            type="text"
+            name="message"
+            id="message"
+            placeholder=""
+            formControlName="message"
+          >
+          </textarea>
+        </div>
+        <div class="col-xs-9 form-group">
+          <label for="phone">{{ "phone" | translate }} <span> *</span></label>
+          <input
+            class="form-control input-lg"
+            type="option"
+            name="phone"
+            id="phone"
+            placeholder=""
+            formControlName="phone"
+          />
+        </div>
+        <div class="col-xs-9 form-group">
+          <label for="email">{{ "email" | translate }} <span> *</span></label>
+          <input
+            class="form-control input-lg"
+            type="option"
+            name="email"
+            id="email"
+            placeholder=""
+            formControlName="email"
+          />
+        </div>
+
+        <div class="col-xs-6">
+          <button
+            class="contact-btn"
+            [disabled]="!orderForm.valid"
+            type="submit"
+            name="text"
+            value="Send"
+          >
+            {{ "SENDORDER" | translate }}
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,80 @@
+<!--		Start Contact Us-->
+<section #contact class="block">
+  <div class="contact-section block">
+    <div class="container">
+      <h2 class="contact-head h1 head-border-center uppercase text-center">
+        {{ "CONTACTUS" | translate }}
+      </h2>
+      <p class="contact-desc text-center">{{ "CONTACTINFO" | translate }}</p>
+
+      <div class="row">
+        <form
+          id="send"
+          class="contact-form"
+          [formGroup]="contactForm"
+          (ngSubmit)="onSubmitContact()"
+        >
+          <div class="col-md-6 form-group">
+            <input
+              class="form-control input-lg"
+              type="text"
+              name="username"
+              id="name"
+              placeholder="Name"
+              formControlName="name"
+            />
+            <input
+              class="form-control input-lg"
+              type="email"
+              name="email"
+              placeholder="Email"
+              id="email"
+              formControlName="email"
+            />
+            <input
+              class="form-control input-lg"
+              type="text"
+              id="subject"
+              name="subject"
+              placeholder="Subject"
+              formControlName="subject"
+            />
+          </div>
+
+          <div class="col-md-6">
+            <textarea
+              class="form-control input-lg"
+              placeholder="Message"
+              id="message"
+              name="message"
+              formControlName="message"
+            ></textarea>
+          </div>
+          <div class="col-xs-12">
+            <button
+              class="contact-btn"
+              [disabled]="!contactForm.valid"
+              type="submit"
+              name="text"
+              value="Send"
+            >
+              {{ "SENDMESSAGE" | translate }}
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- 		End Contact Us -->
+  <!-- Start Form popup -->
+  <div id="popup-reg" class="popup popup-reg">
+    <div class="popup-content">
+      <div class="event-header">
+        <h6>{{ "MESSSAGERESPONSE" | translate }}</h6>
+      </div>
+      <span class="fade-out main-btn-circle" (click)="formClear()">╳</span>
+    </div>
+  </div>
+
+  <!-- End Form popup -->
+</section>

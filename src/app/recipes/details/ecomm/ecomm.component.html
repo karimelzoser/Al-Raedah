@@ -1,0 +1,44 @@
+<app-heading></app-heading>
+<div class="details">
+  <div class="detail">
+    <h3></h3>
+    <div class="details-head">
+      <div class="row">
+        <div class="col-md-7 col-xs-12">
+          <img
+            class="img-responsive text-center"
+            src="assets/imgs/serviceint/التجارة الالكترونية.png"
+            alt=""
+          />
+        </div>
+
+        <div class="div col-md-5 col-xs-12">
+          <div class="content">
+            <h2 class="headCont">{{ "ECOMMERCE" | translate }}</h2>
+            <p class="largeP">{{ "ECOMP" | translate }}</p>
+
+            <div class="row padz">
+              <div class="col-xs-6">
+                <i (click)="Cclick()" class="fas fa-volume-up btns"></i>
+              </div>
+              <div class="col-xs-6">
+                <button class="btnOrder" (click)="navOrd()">
+                  {{ "ORDER" | translate }}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="details-content">
+      <div class="package">
+        <p class="largeP">{{ "ECOMP1" | translate }}</p>
+        <p class="smallP">{{ "ECOMP2" | translate }}</p>
+        <p class="smallP">
+          {{ "ECOMP3" | translate }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

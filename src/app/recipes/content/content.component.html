@@ -1,0 +1,64 @@
+<!-- Start Content Section  -->
+
+<section class="contSecs block" #content>
+  <div class="container">
+    <div class="contentComp">
+      <div class="row">
+        <div class="col-xs-12">
+          <div
+            (click)="COclick()"
+            data-aos="fade-down"
+            data-aos-anchor-placement="center-center"
+            data-aos-duration="3000"
+            class="r2es"
+          >
+            <h3 class="">{{ "COWORD" | translate }}</h3>
+            <p>{{ "COWORDS" | translate }}</p>
+          </div>
+        </div>
+        <div class="col-xs-12">
+          <div class="row">
+            <div class="col-md-4">
+              <div
+                (click)="Tarclick()"
+                data-aos="fade-up-right"
+                data-aos-duration="4500"
+                data-aos-easing="linear"
+                class="r2es"
+              >
+                <h4 class="">{{ "TARGET" | translate }}</h4>
+                <p>{{ "TARGETWORD" | translate }}</p>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div
+                (click)="Meclick()"
+                data-aos="zoom-in"
+                data-aos-duration="4500"
+                data-aos-easing="linear"
+                class="r2es"
+              >
+                <h4 class="">{{ "MESSAGE" | translate }}</h4>
+                <p>{{ "MESSAGEWORD" | translate }}</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div
+                (click)="Viclick()"
+                data-aos="fade-up-left"
+                data-aos-duration="4500"
+                data-aos-easing="linear"
+                class="r2es"
+              >
+                <h4 class="">{{ "VISION" | translate }}</h4>
+                <p>{{ "VISIONWORD" | translate }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Content Section  -->

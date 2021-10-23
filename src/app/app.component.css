@@ -1,0 +1,12 @@
+* {
+  /* font-family: "Open Sans", sans-serif; */
+  font-family: "Almarai", sans-serif;
+  background-color: #faf8fb;
+}
+.loading {
+  margin-top: 150px;
+  margin-bottom: 150px;
+}
+html[dir="rtl"] * {
+  text-align: right;
+}

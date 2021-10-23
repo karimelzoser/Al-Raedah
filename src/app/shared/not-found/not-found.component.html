@@ -1,0 +1,23 @@
+<button
+  class="btn btn-default"
+  style="cursor: pointer; background-color: #eee; margin-left: 10px"
+  (click)="translate.use('en')"
+  type="button"
+>
+  English
+</button>
+<button
+  class="btn btn-default text-right"
+  style="cursor: pointer; background-color: #eee; margin-left: 10px"
+  (click)="translate.use('ar')"
+  type="button"
+>
+  عربى
+</button>
+
+<div
+  class="alert alert-danger text-center"
+  style="margin: 10px; font-weight: 900"
+>
+  {{ "NOTFOUND" | translate }}
+</div>

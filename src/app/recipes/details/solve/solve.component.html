@@ -1,0 +1,48 @@
+<app-heading></app-heading>
+<div class="details">
+  <div class="detail">
+    <h3></h3>
+    <div class="details-head">
+      <div class="row">
+        <div class="col-md-7 col-xs-12">
+          <img
+            class="img-responsive text-center"
+            src="assets/imgs/serviceint/الحلول البرمجية.png"
+            alt=""
+          />
+        </div>
+
+        <div class="div col-md-5 col-xs-12">
+          <div class="content">
+            <h2 class="headCont">{{ "SOLVING" | translate }}</h2>
+            <p class="largeP">{{ "SOLVP" | translate }}</p>
+
+            <div class="row padz">
+              <div class="col-xs-6">
+                <i (click)="Cclick()" class="fas fa-volume-up btns"></i>
+              </div>
+              <div class="col-xs-6">
+                <button class="btnOrder" (click)="navOrd()">
+                  {{ "ORDER" | translate }}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="details-content">
+      <div class="package">
+        <p class="smallP">{{ "SOLVP1" | translate }}</p>
+        <p class="largeP">{{ "SOLVP2" | translate }}</p>
+        <p class="smallP">
+          {{ "SOLVP3" | translate }}
+        </p>
+        <p class="largeP">{{ "SOLVP4" | translate }}</p>
+        <p class="smallP">{{ "SOLVP5" | translate }}</p>
+        <p class="largeP">{{ "SOLVP6" | translate }}</p>
+        <p class="smallP">{{ "SOLVP7" | translate }}</p>
+      </div>
+    </div>
+  </div>
+</div>

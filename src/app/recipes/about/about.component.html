@@ -1,0 +1,345 @@
+<!--		Start About Us Section -->
+<section class="text-center services block" #about>
+  <div class="container servCont">
+    <div class="servRow">
+      <div class="servCol">
+        <div class="row">
+          <div class="col-xs-12">
+            <h2 style="color: #fff; padding-bottom: 10px; margin-bottom: 30px">
+              {{ "SERVICESELRAEDAH" | translate }}
+            </h2>
+          </div>
+
+          <div
+            data-aos="flip-up"
+            data-aos-duration="1500"
+            data-aos-easing="linear"
+            class="col-md-3 col-xs-6 item"
+          >
+            <div class="bordering hoverbubble">
+              <a (click)="Bclick()">
+                <img src="assets/images/bussiness.png" alt="x" />
+                <h4>{{ "BUSSINESS" | translate }}</h4>
+                <div class="row btns">
+                  <div class="col-xs-6">
+                    <button
+                      (click)="nav('bussiness-administration')"
+                      class="btnhoverMore ones"
+                    >
+                      {{ "MORE" | translate }}
+                    </button>
+                  </div>
+                  <div class="col-xs-6">
+                    <button class="btnhoverOrder" (click)="formpopB()">
+                      {{ "ORDER" | translate }}
+                    </button>
+                  </div>
+                </div>
+              </a>
+              <div class="tooltip toolone">
+                {{ "BUSPOP" | translate }}
+              </div>
+            </div>
+          </div>
+
+          <div
+            data-aos="flip-up"
+            data-aos-duration="1500"
+            data-aos-easing="linear"
+            class="col-md-3 col-xs-6 item"
+          >
+            <div class="bordering hoverbubble">
+              <a (click)="Eclick()">
+                <img src="assets/images/ecommerce.png" alt="x" />
+
+                <h4>{{ "ECOMMERCE" | translate }}</h4>
+                <div class="row btns">
+                  <div class="col-xs-6">
+                    <button
+                      (click)="nav('ecommerce')"
+                      class="btnhoverMore twos"
+                    >
+                      {{ "MORE" | translate }}
+                    </button>
+                  </div>
+                  <div class="col-xs-6">
+                    <button class="btnhoverOrder" (click)="formpopE()">
+                      {{ "ORDER" | translate }}
+                    </button>
+                  </div>
+                </div>
+              </a>
+              <div class="tooltip tooltwo">
+                {{ "ECOPOP" | translate }}
+              </div>
+            </div>
+          </div>
+
+          <div
+            data-aos="flip-up"
+            data-aos-duration="1500"
+            data-aos-easing="linear"
+            class="col-md-3 col-xs-6 item"
+          >
+            <div class="bordering hoverbubble">
+              <a (click)="Sclick()">
+                <img src="assets/images/solve.png" alt="x" />
+                <h4>{{ "SOLVING" | translate }}</h4>
+                <div class="row btns">
+                  <div class="col-xs-6">
+                    <button
+                      (click)="nav('solving-problems')"
+                      class="btnhoverMore threes"
+                    >
+                      {{ "MORE" | translate }}
+                    </button>
+                  </div>
+                  <div class="col-xs-6">
+                    <button class="btnhoverOrder" (click)="formpopS()">
+                      {{ "ORDER" | translate }}
+                    </button>
+                  </div>
+                </div>
+              </a>
+              <div class="tooltip toolthree">
+                {{ "SOLVEPOP" | translate }}
+              </div>
+            </div>
+          </div>
+          <div
+            data-aos="flip-up"
+            data-aos-duration="1500"
+            data-aos-easing="linear"
+            class="col-md-3 col-xs-6 item"
+          >
+            <div class="bordering hoverbubble">
+              <a (click)="Gclick()">
+                <img src="assets/images/design.png" alt="x" />
+                <h4>
+                  {{ "GRAPHIC" | translate }}
+                </h4>
+                <div class="row btns">
+                  <div class="col-xs-6">
+                    <button
+                      (click)="nav('graphic-design')"
+                      class="btnhoverMore fours"
+                    >
+                      {{ "MORE" | translate }}
+                    </button>
+                  </div>
+                  <div class="col-xs-6">
+                    <button class="btnhoverOrder" (click)="formpopG()">
+                      {{ "ORDER" | translate }}
+                    </button>
+                  </div>
+                </div>
+              </a>
+              <div class="tooltip toolfour">
+                {{ "GRAPOP" | translate }}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div
+            data-aos="flip-up"
+            data-aos-duration="1500"
+            data-aos-easing="linear"
+            class="col-md-3 col-xs-6 item"
+          >
+            <div class="bordering hoverbubble">
+              <a (click)="Nclick()">
+                <img src="assets/images/network.png" alt="x" />
+                <h4>{{ "NETWORK" | translate }}</h4>
+                <div class="row btns">
+                  <div class="col-xs-6">
+                    <button
+                      (click)="nav('network-design')"
+                      class="btnhoverMore fives"
+                    >
+                      {{ "MORE" | translate }}
+                    </button>
+                  </div>
+                  <div class="col-xs-6">
+                    <button class="btnhoverOrder" (click)="formpopN()">
+                      {{ "ORDER" | translate }}
+                    </button>
+                  </div>
+                </div>
+              </a>
+              <div class="tooltip toolfive">
+                {{ "NETPOP" | translate }}
+              </div>
+            </div>
+          </div>
+          <div
+            data-aos="flip-up"
+            data-aos-duration="1500"
+            data-aos-easing="linear"
+            class="col-md-3 col-xs-6 item"
+          >
+            <div class="bordering hoverbubble">
+              <a (click)="Secclick()">
+                <img src="assets/images/security.png" alt="x" />
+                <h4>{{ "SECURITY" | translate }}</h4>
+                <div class="row btns">
+                  <div class="col-xs-6">
+                    <button (click)="nav('security')" class="btnhoverMore sixs">
+                      {{ "MORE" | translate }}
+                    </button>
+                  </div>
+                  <div class="col-xs-6">
+                    <button class="btnhoverOrder" (click)="formpopSec()">
+                      {{ "ORDER" | translate }}
+                    </button>
+                  </div>
+                </div>
+              </a>
+              <div class="tooltip toolsix">
+                {{ "SECPOP" | translate }}
+              </div>
+            </div>
+          </div>
+
+          <div
+            data-aos="flip-up"
+            data-aos-duration="1500"
+            data-aos-easing="linear"
+            class="col-md-3 col-xs-6 item"
+          >
+            <div class="bordering hoverbubble">
+              <a (click)="Mclick()">
+                <img src="assets/images/mobapp.png" alt="x" />
+                <h4>{{ "MOBILEAPP" | translate }}</h4>
+                <div class="row btns">
+                  <div class="col-xs-6">
+                    <button
+                      (click)="nav('mob-app')"
+                      class="btnhoverMore sevens"
+                    >
+                      {{ "MORE" | translate }}
+                    </button>
+                  </div>
+                  <div class="col-xs-6">
+                    <button class="btnhoverOrder" (click)="formpopM()">
+                      {{ "ORDER" | translate }}
+                    </button>
+                  </div>
+                </div>
+              </a>
+              <div class="tooltip toolseven">
+                {{ "MOBPOP" | translate }}
+              </div>
+            </div>
+          </div>
+          <div
+            data-aos="flip-up"
+            data-aos-duration="1500"
+            data-aos-easing="linear"
+            class="col-md-3 col-xs-6 item"
+          >
+            <div class="bordering hoverbubble">
+              <a (click)="Wclick()">
+                <img src="assets/images/webdev.png" alt="x" />
+                <h4>{{ "WEBDEV" | translate }}</h4>
+                <div class="row btns">
+                  <div class="col-xs-6">
+                    <button
+                      (click)="nav('web-development')"
+                      class="btnhoverMore eights"
+                    >
+                      {{ "MORE" | translate }}
+                    </button>
+                  </div>
+                  <div class="col-xs-6">
+                    <button class="btnhoverOrder" (click)="formpopW()">
+                      {{ "ORDER" | translate }}
+                    </button>
+                  </div>
+                </div>
+              </a>
+              <div class="tooltip tooleight">
+                {{ "WEBPOP" | translate }}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3 col-xs-0 item"></div>
+          <div
+            data-aos="flip-up"
+            data-aos-duration="1500"
+            data-aos-easing="linear"
+            class="col-md-3 col-xs-6 item"
+          >
+            <div class="bordering hoverbubble">
+              <a (click)="Eclick()">
+                <img src="assets/images/workspace.png" alt="x" />
+                <h4>{{ "TEACHSERV" | translate }}</h4>
+                <div class="row btns">
+                  <div class="col-xs-6">
+                    <button
+                      (click)="nav('training')"
+                      class="btnhoverMore nines"
+                    >
+                      {{ "MORE" | translate }}
+                    </button>
+                  </div>
+                  <div class="col-xs-6">
+                    <button class="btnhoverOrder" (click)="formpopEV()">
+                      {{ "ORDER" | translate }}
+                    </button>
+                  </div>
+                </div>
+              </a>
+              <div class="tooltip toolnine">
+                {{ "TEACHPOP" | translate }}
+              </div>
+            </div>
+          </div>
+          <div
+            data-aos="flip-up"
+            data-aos-duration="1500"
+            data-aos-easing="linear"
+            class="col-md-3 col-xs-6 item"
+          >
+            <div class="bordering hoverbubble">
+              <a (click)="Wclick()">
+                <img src="assets/images/courses.png" alt="x" />
+                <h4>{{ "COURSESERV" | translate }}</h4>
+                <div class="row btns">
+                  <div class="col-xs-6">
+                    <button (click)="nav('courses')" class="btnhoverMore tens">
+                      {{ "MORE" | translate }}
+                    </button>
+                  </div>
+                  <div class="col-xs-6">
+                    <button class="btnhoverOrder" (click)="formpopC()">
+                      {{ "ORDER" | translate }}
+                    </button>
+                  </div>
+                </div>
+              </a>
+              <div class="tooltip toolten">
+                {{ "COURSEPOP" | translate }}
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-xs-6 item"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Start Form popup -->
+<!-- <div id="popup-reg" class="popup popup-reg">
+  <div class="popup-content">
+    <app-order></app-order>
+
+    <span class="fade-out main-btn-circle" (click)="formClear()">╳</span>
+  </div>
+</div> -->
+
+<!-- End Form popup -->
+
+<!--		End About Us Section -->

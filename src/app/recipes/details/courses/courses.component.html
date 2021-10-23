@@ -1,0 +1,40 @@
+<app-heading></app-heading>
+<div class="details">
+  <div class="detail">
+    <h3></h3>
+    <div class="details-head">
+      <div class="row">
+        <div class="col-md-7 col-xs-12">
+          <img
+            class="img-responsive text-center"
+            src="assets/imgs/serviceint/دورات تدريبية.png"
+            alt=""
+          />
+        </div>
+
+        <div class="div col-md-5 col-xs-12">
+          <div class="content">
+            <h2 class="headCont">{{ "COURSESERV" | translate }}</h2>
+            <p class="largeP">{{ "COURSELP" | translate }}</p>
+            <p class="smallP">
+              {{ "COURSESP1" | translate }}
+            </p>
+            <p class="smallP">{{ "COURSESP2" | translate }}</p>
+            <p class="smallP">{{ "COURSESP3" | translate }}</p>
+            <div class="row padz">
+              <div class="col-xs-6">
+                <i (click)="Cclick()" class="fas fa-volume-up btns"></i>
+              </div>
+              <div class="col-xs-6">
+                <button class="btnOrder" (click)="navOrd()">
+                  {{ "ORDER" | translate }}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="details-content"></div>
+  </div>
+</div>

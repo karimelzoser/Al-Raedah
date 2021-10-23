@@ -1,0 +1,432 @@
+<div class="covering">
+  <app-heading></app-heading>
+  <div class="orderSec">
+    <h3>{{ "ORDERnetImp" | translate }}</h3>
+    <div class="forms" *ngIf="this.toggling === 'false'">
+      <form
+        id="send"
+        dir="rtl"
+        [formGroup]="orderForm"
+        (ngSubmit)="onSubmitOrder()"
+      >
+        <div class="col-xs-12 form-group">
+          <div class="col-xs-8">
+            <input
+              class="form-control input-lg"
+              type="text"
+              name="username"
+              id="name"
+              placeholder=""
+              formControlName="name"
+            />
+          </div>
+          <div class="col-xs-4">
+            <label for="username"
+              >{{ "username" | translate }} <span> *</span></label
+            >
+          </div>
+        </div>
+
+        <div class="col-xs-12 form-group">
+          <div class="col-xs-8">
+            <input
+              class="form-control input-lg"
+              type="text"
+              name="companyName"
+              id="companyName"
+              placeholder=""
+              formControlName="companyName"
+            />
+          </div>
+          <div class="col-xs-4">
+            <label for="companyName"
+              >{{ "companyName" | translate }} <span> *</span></label
+            >
+          </div>
+        </div>
+
+        <div class="col-xs-12 form-group">
+          <div class="col-xs-8">
+            <input
+              class="form-control input-lg"
+              type="text"
+              name="field"
+              id="field"
+              placeholder=""
+              formControlName="field"
+            />
+          </div>
+          <div class="col-xs-4">
+            <label for="field">{{ "field" | translate }} <span> *</span></label>
+          </div>
+        </div>
+
+        <div class="col-xs-12 form-group">
+          <div class="col-xs-8">
+            <input
+              class="form-control input-lg"
+              type="text"
+              name="address"
+              id="address"
+              placeholder=""
+              formControlName="address"
+            />
+          </div>
+          <div class="col-xs-4">
+            <label for="address"
+              >{{ "address" | translate }} <span> *</span></label
+            >
+          </div>
+        </div>
+        <div class="col-xs-12 form-group">
+          <div class="col-xs-8">
+            <input
+              class="form-control input-lg"
+              type="option"
+              name="phone"
+              id="phone"
+              placeholder=""
+              formControlName="phone"
+            />
+          </div>
+          <div class="col-xs-4">
+            <label for="phone">{{ "phone" | translate }} <span> *</span></label>
+          </div>
+        </div>
+        <div class="col-xs-12 form-group">
+          <div class="col-xs-8">
+            <input
+              class="form-control input-lg"
+              type="option"
+              name="email"
+              id="email"
+              placeholder=""
+              formControlName="email"
+            />
+          </div>
+          <div class="col-xs-4">
+            <label for="email">{{ "email" | translate }} <span> *</span></label>
+          </div>
+        </div>
+
+        <div class="col-xs-8 form-group marginging">
+          <label for="service"
+            >{{ "serviceCH" | translate }} <span> *</span></label
+          >
+          <select
+            class="form-control input-lg"
+            style="height: 47px !important"
+            (change)="changeCity($event)"
+            formControlName="service"
+          >
+            <option *ngFor="let service of services" [ngValue]="service">
+              {{ service }}
+            </option>
+          </select>
+        </div>
+        <div class="col-xs-12 form-group liMargin">
+          <input
+            type="checkbox"
+            id="installServer"
+            name="installServer"
+            formControlName="installServer"
+            value="توريد وتركيب سيرفر وانشاء الاعدادات الخاصة بالصلاحيات"
+          />
+          <label for="installServer"
+            >توريد وتركيب سيرفر وانشاء الاعدادات الخاصة بالصلاحيات</label
+          ><br />
+          <input
+            type="checkbox"
+            id="speedLimit"
+            name="speedLimit"
+            formControlName="speedLimit"
+            value="تحديد سرعة انترنت لكل مستخدم."
+          />
+          <label for="speedLimit"
+            >تحديد سرعة انترنت داخل الشبكة لكل مستخدم.</label
+          ><br />
+          <input
+            type="checkbox"
+            id="firewall"
+            name="firewall"
+            formControlName="firewall"
+            value="جدار حماية"
+          />
+          <label for="firewall"
+            >انشاء جدار حماية من الفيروسات والهجمات الالكترونية .</label
+          ><br />
+          <input
+            type="checkbox"
+            formControlName="extend"
+            id="extend"
+            name="extend"
+            value="تمديد"
+          />
+          <label for="extend"> تمديد الشبكات الداخلية.</label><br />
+          <input
+            type="checkbox"
+            formControlName="encrypt"
+            id="encrypt"
+            name="encrypt"
+            value="تشفير"
+          />
+          <label for="encrypt">
+            تشفير قواعد البيانات والملفات بحيث اذا اطلع عليها احد لا يستطيع
+            معرفة محتواها</label
+          ><br />
+          <input
+            type="checkbox"
+            id="connectGroup"
+            name="connectGroup"
+            formControlName="connectGroup"
+            value="ربط افرع منفصلة"
+          />
+          <label for="connectGroup"> ربط أكثر من فرع منفصل جغرافيا.</label
+          ><br />
+        </div>
+        <div class="col-xs-12 form-group margins">
+          <label for="message" class="message"
+            >{{ "message" | translate }} <span> *</span></label
+          >
+          <textarea
+            class="form-control textaria input-lg messageInput"
+            type="text"
+            style="border-radius: 5px"
+            name="message"
+            id="message"
+            placeholder=""
+            formControlName="message"
+          >
+          </textarea>
+        </div>
+
+        <div class="col-xs-6">
+          <button
+            class="contact-btn"
+            style="float: left"
+            [disabled]="!orderForm.valid"
+            type="submit"
+            name="text"
+            value="Send"
+          >
+            {{ "SENDORDER" | translate }}
+          </button>
+        </div>
+      </form>
+    </div>
+    <div class="formsAr" *ngIf="this.toggling === 'true'">
+      <form
+        id="send"
+        dir="ltr"
+        [formGroup]="orderForm"
+        (ngSubmit)="onSubmitOrder()"
+      >
+        <div class="col-xs-12 form-group">
+          <div class="col-xs-4">
+            <label for="username"
+              >{{ "username" | translate }} <span> *</span></label
+            >
+          </div>
+          <div class="col-xs-8">
+            <input
+              class="form-control input-lg"
+              type="text"
+              name="username"
+              id="name"
+              placeholder=""
+              formControlName="name"
+            />
+          </div>
+        </div>
+
+        <div class="col-xs-12 form-group">
+          <div class="col-xs-4">
+            <label for="companyName"
+              >{{ "companyName" | translate }} <span> *</span></label
+            >
+          </div>
+          <div class="col-xs-8">
+            <input
+              class="form-control input-lg"
+              type="text"
+              name="companyName"
+              id="companyName"
+              placeholder=""
+              formControlName="companyName"
+            />
+          </div>
+        </div>
+
+        <div class="col-xs-12 form-group">
+          <div class="col-xs-4">
+            <label for="field">{{ "field" | translate }} <span> *</span></label>
+          </div>
+          <div class="col-xs-8">
+            <input
+              class="form-control input-lg"
+              type="text"
+              name="field"
+              id="field"
+              placeholder=""
+              formControlName="field"
+            />
+          </div>
+        </div>
+
+        <div class="col-xs-12 form-group">
+          <div class="col-xs-4">
+            <label for="address"
+              >{{ "address" | translate }} <span> *</span></label
+            >
+          </div>
+          <div class="col-xs-8">
+            <input
+              class="form-control input-lg"
+              type="text"
+              name="address"
+              id="address"
+              placeholder=""
+              formControlName="address"
+            />
+          </div>
+        </div>
+        <div class="col-xs-12 form-group">
+          <div class="col-xs-4">
+            <label for="phone">{{ "phone" | translate }} <span> *</span></label>
+          </div>
+          <div class="col-xs-8">
+            <input
+              class="form-control input-lg"
+              type="option"
+              name="phone"
+              id="phone"
+              placeholder=""
+              formControlName="phone"
+            />
+          </div>
+        </div>
+        <div class="col-xs-12 form-group">
+          <div class="col-xs-4">
+            <label for="email">{{ "email" | translate }} <span> *</span></label>
+          </div>
+          <div class="col-xs-8">
+            <input
+              class="form-control input-lg"
+              type="option"
+              name="email"
+              id="email"
+              placeholder=""
+              formControlName="email"
+            />
+          </div>
+        </div>
+
+        <div class="col-xs-8 form-group marginging">
+          <label for="service"
+            >{{ "serviceCH" | translate }} <span> *</span></label
+          >
+          <select
+            class="form-control input-lg"
+            style="height: 47px !important"
+            (change)="changeCity($event)"
+            formControlName="service"
+          >
+            <option *ngFor="let service of servicesAr" [ngValue]="service">
+              {{ service }}
+            </option>
+          </select>
+        </div>
+        <div class="col-xs-12 form-group liMargin">
+          <input
+            type="checkbox"
+            id="installServer"
+            name="installServer"
+            formControlName="installServer"
+            value="توريد وتركيب سيرفر وانشاء الاعدادات الخاصة بالصلاحيات"
+          />
+          <label for="installServer"
+            >Supply and installation of a server and the creation of settings
+            for the powers</label
+          ><br />
+          <input
+            type="checkbox"
+            id="speedLimit"
+            name="speedLimit"
+            formControlName="speedLimit"
+            value="تحديد سرعة انترنت لكل مستخدم."
+          />
+          <label for="speedLimit"
+            >Determining the internet speed within the network for each
+            user</label
+          ><br />
+          <input
+            type="checkbox"
+            id="firewall"
+            name="firewall"
+            formControlName="firewall"
+            value="جدار حماية"
+          />
+          <label for="firewall"
+            >Create a firewall from viruses and attacks</label
+          ><br />
+          <input
+            type="checkbox"
+            formControlName="extend"
+            id="extend"
+            name="extend"
+            value="تمديد"
+          />
+          <label for="extend"> Extension of internal networks.</label><br />
+          <input
+            type="checkbox"
+            formControlName="encrypt"
+            id="encrypt"
+            name="encrypt"
+            value="تشفير"
+          />
+          <label for="encrypt"
+            >Encrypt databases and files so that if someone looks at them, no
+            one can know their content</label
+          ><br />
+          <input
+            type="checkbox"
+            id="connectGroup"
+            name="connectGroup"
+            formControlName="connectGroup"
+            value="ربط افرع منفصلة"
+          />
+          <label for="connectGroup">
+            Connect more than one geographically separate branch.</label
+          ><br />
+        </div>
+        <div class="col-xs-12 form-group margins">
+          <label for="message" class="message"
+            >{{ "message" | translate }} <span> *</span></label
+          >
+          <textarea
+            class="form-control textaria input-lg messageInput"
+            type="text"
+            style="border-radius: 5px"
+            name="message"
+            id="message"
+            placeholder=""
+            formControlName="message"
+          >
+          </textarea>
+        </div>
+        <div class="col-xs-12">
+          <button
+            class="contact-btn"
+            style="float: right !important"
+            [disabled]="!orderForm.valid"
+            type="submit"
+            name="text"
+            value="Send"
+          >
+            {{ "SENDORDER" | translate }}
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,283 @@
+<div class="homing" #home>
+  <nav class="navbar navbar-inverse navbar-fixed-top" dir="rtl">
+    <div class="fluid-container">
+      <div class="navbar-header">
+        <button
+          type="button"
+          class="navbar-toggle collapsed"
+          data-toggle="collapse"
+          data-target="#axit-nav"
+          aria-expanded="false"
+        >
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <a class="navbar-brand scrolltotop navbar-right" href="/">
+        <img src="assets/imgs/raidaarb.png" alt="" />
+      </a>
+      <div class="collapse navbar-collapse" id="axit-nav">
+        <ul class="nav navbar-nav">
+          <!-- <li>
+            <a (click)="scroll(system)">
+              <i class="fas fa-list"></i>
+            </a>
+          </li> -->
+          <li *ngIf="this.toggling === 'false'">
+            <a
+              style="cursor: pointer"
+              (click)="
+                changeCurrentLang('en');
+                changeDir('ltr');
+                changeToggling('true');
+                RTL = false
+              "
+              >English</a
+            >
+          </li>
+          <li *ngIf="this.toggling === 'true'">
+            <a
+              style="cursor: pointer"
+              (click)="
+                changeCurrentLang('ar');
+                changeDir('rtl');
+                changeToggling('false');
+                RTL = true
+              "
+              >عربى</a
+            >
+          </li>
+
+          <!-- <li>
+            <a (click)="scroll(about)" href="/" data-scroll="features">
+              <i class="fas fa-search"></i>
+            </a>
+          </li> -->
+          <li>
+            <a href="/" data-scroll="about" (click)="scroll(contact)"
+              ><i class="fas fa-phone"></i
+            ></a>
+          </li>
+          <li>
+            <a href="/" data-scroll="vision" (click)="scroll(content)">{{
+              "ABOUTRAIDA" | translate
+            }}</a>
+          </li>
+          <li>
+            <a href="/" (click)="navBlogs()" data-scroll="mission"
+              >{{ "BLOGS" | translate }}
+            </a>
+          </li>
+          <li>
+            <a href="/" (click)="scroll(about)"
+              >{{ "ELECSERV" | translate }}
+            </a>
+          </li>
+
+          <li class="dropdown" *ngIf="isAuthenticated">
+            <a
+              href="#"
+              style="background-color: rgb(155, 56, 80)"
+              class="dropdown-toggle"
+              data-toggle="dropdown"
+              role="button"
+              aria-haspopup="true"
+              aria-expanded="false"
+              >{{ "ADMIN" | translate }} <span class="caret"></span
+            ></a>
+
+            <ul class="dropdown-menu">
+              <li>
+                <a style="cursor: pointer" (click)="navContact()">{{
+                  "CONTACTLIST" | translate
+                }}</a>
+              </li>
+              <li>
+                <a
+                  style="cursor: pointer"
+                  (click)="navOrder('solve-problems-order-list')"
+                  >{{ "ORDERSOLVELIST" | translate }}</a
+                >
+              </li>
+              <li>
+                <a
+                  style="cursor: pointer"
+                  (click)="navOrder('network-order-list')"
+                  >{{ "ORDERNETWORKLIST" | translate }}</a
+                >
+              </li>
+              <li>
+                <a
+                  style="cursor: pointer"
+                  (click)="navOrder('bussiness-order-list')"
+                  >{{ "ORDERBUSSINESSLIST" | translate }}</a
+                >
+              </li>
+              <li>
+                <a
+                  style="cursor: pointer"
+                  (click)="navOrder('event-order-list')"
+                  >{{ "ORDEREVENTLIST" | translate }}</a
+                >
+              </li>
+              <li>
+                <a
+                  style="cursor: pointer"
+                  (click)="navOrder('mobile-app-order-list')"
+                  >{{ "ORDERMOBILELIST" | translate }}</a
+                >
+              </li>
+              <li>
+                <a
+                  style="cursor: pointer"
+                  (click)="navOrder('web-development-order-list')"
+                  >{{ "ORDERWEBLIST" | translate }}</a
+                >
+              </li>
+              <li>
+                <a
+                  style="cursor: pointer"
+                  (click)="navOrder('network-order-list')"
+                  >{{ "ORDERnetImpLIST" | translate }}</a
+                >
+              </li>
+              <li>
+                <a style="cursor: pointer" (click)="onLogout()">{{
+                  "LOGOUT" | translate
+                }}</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Video Section  -->
+  <header class="video-section block">
+    <div class="video">
+      <video autoplay [muted]="'muted'" loop="false" width="100%">
+        <source type="video/mp4" src="assets/video/cover.mp4" />
+      </video>
+      <div
+        data-aos="fade-left"
+        data-aos-duration="3000"
+        class="titleVid"
+        *ngIf="this.toggling === 'false'"
+      >
+        <h5>
+          {{ "AHLAN" | translate }}
+        </h5>
+        <h1>{{ "RAIDANAME" | translate }}</h1>
+        <p>{{ "RAIDAINTRO" | translate }}</p>
+      </div>
+      <div
+        data-aos="fade-right"
+        data-aos-duration="3000"
+        class="titleVidAr"
+        *ngIf="this.toggling === 'true'"
+      >
+        <h5>{{ "AHLAN" | translate }}</h5>
+        <h1>{{ "RAIDANAME" | translate }}</h1>
+        <p>{{ "RAIDAINTRO" | translate }}</p>
+      </div>
+    </div>
+    <a (click)="scroll(about)" class="to-bottom" data-scroll="about">
+      <span></span>
+    </a>
+    <div></div>
+  </header>
+  <span #about></span>
+  <app-about></app-about>
+  <span #program></span>
+  <app-program></app-program>
+  <span #system></span>
+  <app-system></app-system>
+  <span #clients></span>
+  <app-clients></app-clients>
+  <span #content></span>
+  <app-content></app-content>
+  <span #contact></span>
+  <app-contact></app-contact>
+  <span #footer></span>
+  <app-footer></app-footer>
+
+  <a
+    href="https://wa.me/+20112106177"
+    class="btn-whatsapp-pulse btn-whatsapp-pulse-border"
+  >
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- Start fixed side nav -->
+
+  <div class="swiper-pagination swiper-pagination-bullets opened navlist">
+    <a
+      (click)="scroll(home)"
+      data-scroll="home"
+      class="swiper-pagination-bullet slide-intro navlink active"
+      data-original-title="الرئيسية"
+    >
+      <img src="assets/imgs/pullet-icon-1.png" alt="home" />
+    </a>
+    <a
+      (click)="scroll(about)"
+      data-scroll="about"
+      class="swiper-pagination-bullet slide-intro navlink"
+      data-original-title="الخدمات"
+    >
+      <img src="assets/imgs/pullet-icon-2.png" alt="home" />
+    </a>
+    <a
+      (click)="scroll(program)"
+      data-scroll="program"
+      class="swiper-pagination-bullet slide-intro navlink"
+      data-original-title="المهمة"
+    >
+      <img src="assets/imgs/pullet-icon-4.png" alt="home" />
+    </a>
+    <a
+      (click)="scroll(system)"
+      data-scroll="system"
+      class="swiper-pagination-bullet slide-intro navlink"
+      data-original-title="الرؤية"
+    >
+      <img src="assets/imgs/servicon6.png" alt="home" />
+    </a>
+    <a
+      (click)="scroll(clients)"
+      data-scroll="clients"
+      class="swiper-pagination-bullet slide-intro navlink"
+      data-original-title="عملائنا"
+    >
+      <img src="assets/imgs/pullet-icon-7.png" alt="home" />
+    </a>
+    <a
+      (click)="scroll(content)"
+      data-scroll="content"
+      class="swiper-pagination-bullet slide-intro navlink"
+      data-original-title="اتصل بنا"
+    >
+      <img src="assets/imgs/pullet-icon-8.png" alt="home" />
+    </a>
+    <a
+      (click)="scroll(contact)"
+      data-scroll="contact"
+      class="swiper-pagination-bullet slide-intro navlink"
+      data-original-title="اتصل بنا"
+    >
+      <img src="assets/imgs/pullet-icon-5.png" alt="home" />
+    </a>
+    <a
+      (click)="scroll(footer)"
+      data-scroll="footer"
+      class="swiper-pagination-bullet slide-intro navlink"
+      data-original-title="الخاتمة"
+    >
+      <img src="assets/imgs/pullet-icon-10.png" alt="home" />
+    </a>
+  </div>
+  <!-- End fixed side nav -->
+</div>

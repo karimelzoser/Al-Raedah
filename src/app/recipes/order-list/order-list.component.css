@@ -1,0 +1,66 @@
+@import url(https://unpkg.com/@webpixels/css@1.0/dist/index.css);
+/* Start Search & counter  */
+.listaya {
+  margin-bottom: 100px;
+}
+#search-addon {
+  position: absolute;
+  top: 12px;
+  right: 30px;
+}
+#search-addonAr {
+  position: absolute;
+  top: 12px;
+  left: 30px;
+}
+
+.lengthaya {
+  width: 100%;
+  display: flex;
+  align-items: left;
+  margin-bottom: 0;
+  justify-content: left;
+  margin-top: 11px;
+  /* background: linear-gradient(to right, #fdfbfb, #ebedee 70%); */
+  text-align: left;
+  background-color: #154f74;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.lengthaya span {
+  /* font-size: 23px; */
+  font-weight: bold;
+}
+
+/* End Search & Counter */
+.sizing {
+  font-size: 1.5rem !important;
+}
+
+.sizingh {
+  font-size: 2rem !important;
+}
+.seven h1 {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 300;
+  color: #343d52;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  display: grid;
+  grid-template-columns: 1fr max-content 1fr;
+  grid-template-rows: 27px 0;
+  grid-gap: 20px;
+  align-items: center;
+}
+
+.seven h1:after,
+.seven h1:before {
+  content: " ";
+  display: block;
+  border-bottom: 1px solid #525f7f;
+  border-top: 1px solid #525f7f;
+  height: 5px;
+  background-color: #f8f8f8;
+}

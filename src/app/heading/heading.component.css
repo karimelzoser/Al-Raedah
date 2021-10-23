@@ -1,0 +1,111 @@
+/* Start Navbar */
+
+.fluid-container {
+  padding: 20px 30px;
+}
+.navbar {
+  margin-bottom: 0;
+  background-color: rgb(221, 221, 221);
+  border: none;
+  display: block !important;
+  padding-top: 0 !important;
+  padding-right: 0 !important;
+  padding-bottom: 0 !important;
+  padding-left: 0 !important;
+  -webkit-box-shadow: 0 9px 28px -10px #111, inset 15px 0px 10px -15px #111;
+  -moz-box-shadow: 0 9px 28px -10px #111, inset 15px 0px 10px -15px #111;
+  box-shadow: 0 9px 28px -10px #111, inset 15px 0px 10px -15px #111;
+}
+.navbar-nav {
+  display: block !important;
+}
+.navbar-inverse .navbar-nav > li > a {
+  color: rgb(43, 92, 143);
+}
+.navbar-inverse .navbar-nav > li > a {
+  font-size: 17px;
+  cursor: pointer;
+  line-height: 0;
+}
+.scrolled {
+  background-color: rgb(221, 221, 221);
+  transition: all 0.3s ease-in-out;
+}
+.scrolled img {
+  display: inline !important;
+}
+
+.navbar-inverse .navbar-brand {
+  margin: 0;
+}
+.navbar-inverse .navbar-nav > .open > a,
+.navbar-inverse .navbar-nav > .open > a:focus,
+.navbar-inverse .navbar-nav > .open > a:hover {
+  color: #fff;
+  background-color: transparent;
+}
+.navbar-brand {
+  padding: 0;
+}
+.navbar-inverse .navbar-brand img {
+  height: 100px;
+  margin-top: -20px;
+}
+
+@media (max-width: 991px) {
+  /*	Start navbar */
+  .navbar-inverse .navbar-brand {
+  }
+
+  /*	End navbar */
+}
+
+/* Main navbar */
+
+/*dropdown menu of navbar */
+
+.navbar-right .dropdown-menu {
+  left: 0;
+  background: #333;
+}
+
+.navbar-nav .dropdown-menu {
+  left: 0;
+  background: #333;
+}
+/*downdown menu links of navbar */
+.dropdown-menu > li > a {
+  color: #fff;
+  padding: 6px 20px;
+}
+.navbar-nav .dropdown-menu li a:hover {
+  background-color: #000;
+}
+
+.dropdown-menu .divider {
+  background-color: #a89494;
+}
+
+.navbar-inverse .navbar-toggle:hover {
+  background-color: transparent;
+}
+/*End Navbar */
+
+@media (max-width: 991px) {
+  .navbar-fixed-top {
+    height: 80px !important;
+  }
+  .navbar-brand {
+    margin-top: -48px !important;
+  }
+  .navbar-inverse .navbar-brand img {
+    height: 90px;
+    margin-top: -20px;
+  }
+  .navbar-collapse {
+    background-color: #eee;
+  }
+  .navbar-inverse .navbar-nav > li > a {
+    color: #0d4264 !important;
+  }
+}

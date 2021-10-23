@@ -1,0 +1,54 @@
+form {
+  background-color: #367b97;
+  border-radius: 2%;
+  padding: 15px;
+  width: 390px;
+  color: #fff;
+  position: relative;
+  margin: auto;
+  margin-top: 40px;
+}
+.fully {
+  height: 720px;
+  background-color: #f0ffff;
+}
+form h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+
+.email {
+  position: relative;
+  line-height: 1.7;
+  font-size: 25px;
+  letter-spacing: 1px;
+  text-align: center;
+  margin: 5px auto;
+  margin-right: 30px;
+}
+.password {
+  line-height: 1.7;
+  letter-spacing: 1px;
+  font-size: 25px;
+  text-align: center;
+  margin: 5px auto;
+  margin-right: 30px;
+}
+
+input {
+  width: 300px;
+  margin: auto;
+}
+
+.butn {
+  margin-left: 0;
+}
+.head-border-center:after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 3px;
+  margin: 20px auto;
+  background-color: #ff8b38;
+}

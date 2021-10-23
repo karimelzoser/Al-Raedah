@@ -1,0 +1,230 @@
+/* Start System Section  */
+
+.sysSec {
+  position: relative;
+  background: url(../../../assets/imgs/Picture.png);
+  background-size: cover;
+}
+
+.sysSec h3 {
+  text-align: center;
+  font-size: 55px;
+  padding-top: 30px;
+  margin: 40px 0 80px 0;
+  font-weight: 400;
+  color: #0d4264;
+  text-align: center;
+  margin: 46px auto;
+}
+
+.sysSec .contSys {
+  margin-top: 40px;
+  padding-bottom: 30px;
+}
+.sysSec .contMin {
+  width: 200px;
+  height: 255px;
+  position: relative;
+  margin: 0 auto;
+  padding: -1px 20px;
+  background-color: #f3f3f3;
+}
+.contMin img {
+  height: 145px;
+  margin: 12px;
+}
+.contMin h4 {
+  color: #0d4264;
+  font-weight: 400;
+  font-size: 27px;
+}
+.contMin .shadow {
+  position: absolute;
+  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  top: 12px;
+  left: -15px;
+  background-color: rgb(80 80 80 / 38%);
+}
+.contMin .shadowR {
+  position: absolute;
+  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  top: 12px;
+  right: -15px;
+  background-color: rgb(80 80 80 / 18%);
+}
+
+@media (max-width: 991px) {
+  .sysSec .overlay img {
+    height: 1280px;
+  }
+  .sysSec h3 {
+    text-align: center !important;
+    font-size: 37px;
+    padding: 10px;
+    font-weight: 400;
+    margin: 0 auto 55px;
+  }
+
+  .sysSec .contMin {
+    width: 200px;
+    height: 235px;
+    padding: 0 10px;
+    margin: 15px auto;
+  }
+  .contMin img {
+    weight: 150px !important;
+    height: 167px;
+  }
+  .contMin h4 {
+    font-weight: 400;
+    font-size: 20px;
+  }
+}
+
+/* End System Section */
+
+/* Start Form Popup */
+
+button {
+  text-decoration: none;
+  border: none;
+}
+
+.popup-btn {
+  position: relative !important;
+  margin-top: -5px;
+}
+.main-btn-rect,
+.main-btn-circle {
+  position: relative;
+  font-family: "Roboto", sans-serif;
+  color: #fffff0;
+  background-color: rgb(252, 79, 79);
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 1px;
+  outline: none;
+  cursor: pointer;
+  z-index: 100;
+}
+.main-btn-rect {
+  padding: 10px;
+  line-height: 15px;
+}
+.main-btn-rect:before,
+.main-btn-rect:after {
+  position: absolute;
+  content: "";
+  top: 0;
+  width: 0%;
+  height: 100%;
+  background-color: rgba(255, 255, 240, 0.2);
+  -webkit-transition: width 0.3s;
+  -o-transition: width 0.3s;
+  transition: width 0.3s;
+}
+.main-btn-rect:before {
+  left: 0;
+}
+.main-btn-rect:after {
+  right: 0;
+}
+.main-btn-rect:hover:before,
+.main-btn-rect:hover:after {
+  width: 50%;
+}
+.main-btn-circle {
+  height: 40px;
+  width: 40px;
+  -webkit-border-radius: 50%;
+  border-radius: 100%;
+  line-height: 40px;
+  -webkit-transition: box-shadow 0.3s;
+  -o-transition: box-shadow 0.3s;
+  transition: box-shadow 0.3s;
+}
+.main-btn-circle:hover {
+  -webkit-box-shadow: inset 2px 1px 0px 20px rgba(255, 255, 240, 0.2);
+  -moz-box-shadow: inset 2px 1px 0px 20px rgba(255, 255, 240, 0.2);
+  box-shadow: inset 2px 1px 0px 20px rgba(255, 255, 240, 0.2);
+}
+.popup {
+  position: fixed;
+  top: 100%;
+  width: 100%;
+  height: 100%;
+  z-index: 10001;
+}
+.popup.active {
+  top: 0;
+  background-color: rgba(3, 3, 3, 0.26);
+  transition: background-color 0.6s, opacity 0.6s;
+}
+.popup .main-btn-rect {
+  padding: 10px;
+}
+.popup .popup-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  max-height: 568px;
+  min-width: 320px;
+  margin-top: 150px;
+  padding: 25px;
+  background-color: #fffff0;
+  color: #070000;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
+    0 1px 2px rgba(0, 0, 0, 0.24);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -o-transform: translateX(-50%) translateY(-50%);
+  transition: margin 0.6s;
+  -webkit-transition: margin 0.6s;
+  -moz-transition: margin 0.6s;
+  -o-transition: margin 0.6s;
+}
+.popup.active .popup-content {
+  margin-top: 0px;
+}
+.popup-content h6 {
+  display: table;
+  font-size: 16px;
+  text-align: center;
+  margin: 10px auto;
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  font-weight: 100;
+}
+
+.popup .fade-out {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  text-align: center;
+  font-size: 15px;
+}
+
+@media only screen and (max-width: 768px) {
+  h1 {
+    font-size: 25px;
+  }
+  h2 {
+    font-size: 14px;
+  }
+
+  .popup-btn {
+    padding: 7px 60px;
+    font-size: 14px;
+  }
+}
+
+/* End Form Popup */

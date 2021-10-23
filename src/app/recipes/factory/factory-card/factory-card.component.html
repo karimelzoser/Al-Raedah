@@ -1,0 +1,111 @@
+<app-heading></app-heading>
+<div class="row">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div
+          style="margin: 50px auto; padding-top: 70px !important"
+          class="widthing"
+          *ngIf="this.toggling === 'true'"
+        >
+          <div class="bacon-blog-post bacon-shadow">
+            <img [src]="blogImgUr" class="wp-post-image img-responsive" />
+            <div class="bacon-blog-post-inner">
+              <h2>
+                <a
+                  href=""
+                  rel="bookmark"
+                  title="Permanent link to Finding What Challenges You"
+                  class="title-row"
+                  >{{ this.titl }}
+                </a>
+              </h2>
+              <p>
+                {{ this.pargrap1 }}
+              </p>
+              <p>
+                {{ this.pargrap2 }}
+              </p>
+              <p>
+                {{ this.pargrap3 }}
+              </p>
+              <blockquote>
+                <p>
+                  {{ this.redlineparagpra1 }}
+                </p>
+                <p>
+                  {{ this.redlineparagpra2 }}
+                </p>
+                <p>
+                  {{ this.redopentitl }}
+                  <a target="_blank">{{ this.redopenwor }}</a>
+                </p>
+              </blockquote>
+              <p>
+                {{ this.pargrap4 }}
+              </p>
+              <p></p>
+              <h3>{{ titl2 }}</h3>
+              <p>
+                {{ this.titl2paragraph }}
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          style="margin: 50px auto; padding-top: 70px !important"
+          dir="rtl"
+          class="widthing"
+          *ngIf="this.toggling === 'false'"
+        >
+          <div class="bacon-blog-post bacon-shadow">
+            <img [src]="blogImgUr" class="wp-post-image img-responsive" />
+            <div class="bacon-blog-post-inner">
+              <h2>
+                <a
+                  href=""
+                  rel="bookmark"
+                  title="Permanent link to Finding What Challenges You"
+                  class="title-row"
+                  >{{ this.titlAr }}
+                </a>
+              </h2>
+              <p>
+                {{ this.pargrap1Ar }}
+              </p>
+              <p>
+                {{ this.pargrap2Ar }}
+              </p>
+              <p>
+                {{ this.pargrap3Ar }}
+              </p>
+              <blockquote
+                style="border-left: 0; border-right: #e0282b solid 0.25em"
+              >
+                <p>
+                  {{ this.redlineparagpra1Ar }}
+                </p>
+                <p>
+                  {{ this.redlineparagpra2Ar }}
+                </p>
+                <p>
+                  {{ this.redopentitlAr }}
+                  <a target="_blank">{{ this.redopenworAr }}</a>
+                </p>
+              </blockquote>
+              <p>
+                {{ this.pargrap4Ar }}
+              </p>
+              <p></p>
+              <h3>{{ titl2Ar }}</h3>
+              <p>
+                {{ this.titl2paragraphAr }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-footer></app-footer>
+</div>

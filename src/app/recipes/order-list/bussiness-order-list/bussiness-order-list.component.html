@@ -1,0 +1,109 @@
+<app-heading class="forced"></app-heading>
+
+<div class="p-10 bg-surface-secondary">
+  <div class="container">
+    <div class="card">
+      <div class="card-header seven">
+        <h1 class="text-center">{{ "ORDERBUSSINESSLIST" | translate }}</h1>
+      </div>
+      <div class="row">
+        <div class="col-sm-4 col-xs-6">
+          <div style="margin-top: 5px; margin-bottom: 17px">
+            <input
+              type="search"
+              class="form-control rounded"
+              placeholder="Search"
+              [(ngModel)]="filtering"
+              aria-label="Search"
+              aria-describedby="search-addon"
+            />
+            <span id="search-addonAr" *ngIf="this.toggling === 'false'">
+              <i class="fas fa-search"></i>
+            </span>
+            <span id="search-addon" *ngIf="this.toggling === 'true'">
+              <i class="fas fa-search"></i>
+            </span>
+          </div>
+        </div>
+        <div class="col-sm-2 col-xs-6">
+          <p class="lengthaya">
+            {{ "ORDERSIGN" | translate }} &nbsp;
+            <span>{{ lengthaya }}</span> &nbsp;
+          </p>
+        </div>
+      </div>
+
+      <div class="table-responsive text-center">
+        <table class="table table-hover table-nowrap">
+          <thead class="thead-light">
+            <tr>
+              <th scope="col" class="sizingh">{{ "NAME" | translate }}</th>
+              <th scope="col" class="sizingh">
+                {{ "companyName" | translate }}
+              </th>
+              <th scope="col" class="sizingh">{{ "field" | translate }}</th>
+              <th scope="col" class="sizingh">{{ "address" | translate }}</th>
+              <th scope="col" class="sizingh">{{ "serviceN" | translate }}</th>
+
+              <th scope="col" class="sizingh">{{ "phone" | translate }}</th>
+              <th scope="col" class="sizingh">{{ "email" | translate }}</th>
+              <th scope="col" class="sizingh">{{ "message" | translate }}</th>
+              <th scope="col" class="sizingh">{{ "DELETE" | translate }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let order of orders | filter: filtering">
+              <td data-label="Job Title" class="sizing">
+                <a class="text-heading font-semibold" href="#">
+                  {{ order.name }}
+                </a>
+              </td>
+              <td data-label="Job Title" class="sizing">
+                <a class="text-heading font-semibold" href="#">
+                  {{ order.companyName }}
+                </a>
+              </td>
+              <td data-label="Job Title" class="sizing">
+                <a class="text-heading font-semibold" href="#">
+                  {{ order.field }}
+                </a>
+              </td>
+              <td data-label="Job Title" class="sizing">
+                <a class="text-heading font-semibold" href="#">
+                  {{ order.address }}
+                </a>
+              </td>
+              <td data-label="Job Title" class="sizing">
+                <a class="text-heading font-semibold" href="#">
+                  {{ order.service }}
+                </a>
+              </td>
+
+              <td data-label="Job Title" class="sizing">
+                <a class="text-heading font-semibold" href="#">
+                  {{ order.phone }}
+                </a>
+              </td>
+              <td data-label="Job Title" class="sizing">
+                <a class="text-heading font-semibold" href="#">
+                  {{ order.email }}
+                </a>
+              </td>
+              <td data-label="Job Title" class="sizing">
+                <a class="text-heading font-semibold" href="#">
+                  {{ order.message }}
+                </a>
+              </td>
+
+              <td data-label="" class="sizing">
+                <button class="btn btn-danger" (click)="deleteOrder(order.id)">
+                  ╳
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

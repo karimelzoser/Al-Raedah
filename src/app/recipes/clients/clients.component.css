@@ -1,0 +1,44 @@
+/* sTART cLIENT sECTION */
+
+.secCli {
+  /* background: linear-gradient(
+      -164deg,
+      transparent 75%,
+      #2a80b9 75%,
+      #2a80b9 100%
+    ),
+    linear-gradient(164deg, transparent 75%, #2a80b9 75%, #2a80b9 100%),
+    url(../../../assets/imgs/covercli.svg); */
+  background: url(../../../assets/imgs/prog1.jpg) no-repeat;
+
+  background-size: cover;
+  padding-bottom: 200px;
+  padding-top: 100px;
+}
+.secCli h2 {
+  text-align: center;
+  margin: 80px auto;
+  color: #0d4264;
+  font-size: 45px;
+}
+.slick-slider {
+  width: 100% !important;
+  background-color: transparent !important;
+}
+[dir="rtl"].slick-slider {
+  float: left;
+}
+
+body .slick-prev,
+body .slick-next {
+  height: 45px;
+  width: 40px;
+  background: #000 !important;
+  color: 000;
+  z-index: 100;
+}
+.slick-wrapper {
+  padding-bottom: 20px;
+}
+
+/* eND Client Section */

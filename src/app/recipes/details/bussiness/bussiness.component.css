@@ -1,0 +1,135 @@
+.details {
+}
+.detail {
+  background: url(../../../../assets/imgs/orderback.jpg);
+  background-size: cover;
+  padding-bottom: 200px;
+}
+.detail h3 {
+  height: 120px;
+}
+
+p {
+  margin: 0;
+}
+.details-head {
+  background-image: linear-gradient(
+    to right,
+    rgba(30, 41, 81, 1),
+    rgba(78, 187, 164, 1)
+  );
+  color: #fff;
+  padding: 0 100px;
+  height: 600px;
+}
+.details-head img {
+  height: 570px;
+  margin: 20px 0;
+  float: left;
+}
+
+.details-head .content {
+  margin: 100px 0;
+}
+
+.details-head .content .headCont {
+  margin-bottom: 87px;
+  font-size: 45px;
+  font-weight: bold;
+}
+.details-head .content .largeP {
+  font-size: 24px;
+}
+.details-head .content .padz {
+  padding: 100px 45px 0 0;
+}
+
+.details-head .content .btns {
+  padding: 8px 11px;
+  color: #0c436b;
+  font-size: 28px;
+  border-radius: 12px;
+  background-color: #ddd;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  box-shadow: none;
+  margin-top: 15px;
+}
+
+.details-head .content .btnOrder {
+  padding: 7px;
+  color: rgb(12, 67, 107);
+  font-size: 20px;
+  border-radius: 12px;
+  background-color: #ddd;
+  margin-top: 15px;
+
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  box-shadow: none;
+}
+
+.details-content {
+  width: 93%;
+  padding: 100px 114px;
+  -webkit-box-shadow: 0 0 45px 2px #a1a1a1;
+  -moz-box-shadow: 0 0 45px 2px #a1a1a1;
+  box-shadow: 0 0 45px 2px #a1a1a1;
+  margin: 84px auto;
+  background-color: #ffffff40;
+  border-radius: 2px;
+}
+
+.details-content .package {
+  margin-bottom: 35px;
+}
+
+.details-content .package .largeP {
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+.details-content .package .largeP2 {
+  font-size: 20px;
+}
+.details-content .largeP {
+  font-size: 24px;
+  color: rgb(12, 65, 102);
+  font-weight: bolder;
+}
+
+.details-content .smallP {
+  color: rgb(55, 80, 124);
+  font-size: 18px;
+}
+
+@media (max-width: 991px) {
+  .details-head {
+    margin: 0;
+    padding: 0 20px;
+    height: 900px;
+  }
+
+  .details-head img {
+    height: 290px;
+    padding-top: 40px;
+    margin: 0 auto;
+    float: none;
+  }
+  .details-head .content .headCont {
+    font-size: 40px;
+  }
+  .details-head .content .padz {
+    padding: 70px 45px;
+  }
+  .details-content {
+    padding: 20px 15px;
+  }
+  .details-content .largeP {
+    font-size: 18px;
+  }
+  .details-content .smallP {
+    font-size: 14px;
+  }
+}

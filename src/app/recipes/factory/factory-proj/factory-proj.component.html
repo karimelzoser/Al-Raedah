@@ -1,0 +1,621 @@
+<app-heading></app-heading>
+<div class="blogs">
+  <div class="blogsIN">
+    <div class="row">
+      <div class="container col-xs-12 text-center">
+        <h1>
+          {{ "BLOGS" | translate }}
+        </h1>
+      </div>
+
+      <!-- Start Form  -->
+      <div class="shape container" *ngIf="isAuthenticated">
+        <form
+          [formGroup]="recipeForm"
+          (ngSubmit)="onSubmit()"
+          style="margin-top: 10px; border-radius: 20px"
+        >
+          <div class="row">
+            <div class="col-xs-12">
+              <h2
+                style="
+                  color: #fff;
+                  font-weight: bold;
+                  padding: 10px;
+                  text-align: center;
+                  margin-top: 10px;
+                  margin-bottom: 20px;
+                  font-size: 50px;
+                "
+              >
+                {{ "PROJEDIT" | translate }}
+              </h2>
+            </div>
+
+            <div class="col-xs-6">
+              <div class="form-group" style="margin: 10px">
+                <input
+                  type="text"
+                  id="BlogImg"
+                  class="form-control"
+                  disabled
+                  formControlName="blogImgUrl"
+                  [(ngModel)]="this.getDownloadURL1"
+                />
+              </div>
+            </div>
+
+            <!-- Start Upload Img  -->
+            <div
+              class="col-md-5 col-xs-12"
+              style="height: 150px; margin: 12px 25px"
+            >
+              <div class="card">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-xs-6">
+                      <h5 class="card-title">upload Image :</h5>
+                    </div>
+                    <div class="col-xs-6">
+                      <img
+                        class="img-responsive"
+                        style="max-height: 200px; max-width: 100px"
+                        [src]="getDownloadURL1"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                  <input
+                    type="file"
+                    (change)="upload1($event)"
+                    accept=".png,.jpg"
+                  />
+                  <br /><br />
+                  <div class="progress">
+                    <div
+                      class="progress-bar progress-bar-striped bg-success"
+                      role="progressbar"
+                      [style.width]="(uploadProgress1 | async) + '%'"
+                      [attr.aria-valuenow]="uploadProgress1 | async"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    ></div>
+                  </div>
+                  <br />
+                  <div
+                    class="btn-group"
+                    role="group"
+                    *ngIf="uploadState1 | async; let state"
+                  >
+                    <button
+                      type="button"
+                      class="btn btn-primary"
+                      (click)="task.pause()"
+                      [disabled]="state === 'paused'"
+                    >
+                      Pause
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-primary"
+                      (click)="task.cancel()"
+                      [disabled]="!(state === 'paused' || state === 'running')"
+                    >
+                      Cancel
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-primary"
+                      (click)="task.resume()"
+                      [disabled]="state === 'running'"
+                    >
+                      Resume
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End Upload Img -->
+
+            <div class="col-xs-12">
+              <div style="margin: 50px auto">
+                <div class="bacon-blog-post bacon-shadow">
+                  <img
+                    [src]="getDownloadURL1"
+                    class="wp-post-image img-responsive"
+                  />
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <h2
+                        style="
+                          text-align: center;
+                          margin: 46px auto 0 0;
+                          color: #ffe5e0;
+                        "
+                      >
+                        Blog In English
+                      </h2>
+                      <div class="bacon-blog-post-inner">
+                        <h2>
+                          <label for="BLOGTITLE">Blog Title</label>
+                          <input
+                            type="text"
+                            id="BLOGTITLE"
+                            class="form-control"
+                            formControlName="title"
+                            [(ngModel)]="this.titl"
+                          />
+                        </h2>
+                        <p>
+                          <label for="P1">Paragraph 1</label>
+                          <input
+                            type="text"
+                            id="P1"
+                            class="form-control"
+                            formControlName="pargraph1"
+                            [(ngModel)]="this.pargrap1"
+                          />
+                        </p>
+                        <p>
+                          <label for="P2">Paragraph 2</label>
+                          <input
+                            type="text"
+                            id="P2"
+                            class="form-control"
+                            formControlName="pargraph2"
+                            [(ngModel)]="this.pargrap2"
+                          />
+                        </p>
+                        <p>
+                          <label for="P3">Paragraph 3</label>
+                          <input
+                            type="text"
+                            id="P3"
+                            class="form-control"
+                            formControlName="pargraph3"
+                            [(ngModel)]="this.pargrap3"
+                          />
+                        </p>
+                        <blockquote>
+                          <p>
+                            <label for="REDLINEP1">Highlight Paragraph1</label>
+                            <input
+                              type="text"
+                              id="REDLINEP1"
+                              class="form-control"
+                              formControlName="redlineparagprah1"
+                              [(ngModel)]="this.redlineparagpra1"
+                            />
+                          </p>
+                          <p>
+                            <label for="REDLINEP2">Highlight Paragraph2</label>
+                            <input
+                              type="text"
+                              id="REDLINEP2"
+                              class="form-control"
+                              formControlName="redlineparagprah2"
+                              [(ngModel)]="this.redlineparagpra2"
+                            />
+                          </p>
+                          <p>
+                            <label for="REDOPENTITLE">Opening Title</label>
+                            <input
+                              type="text"
+                              id="REDOPENTITLE"
+                              class="form-control"
+                              formControlName="redopentitle"
+                              [(ngModel)]="this.redopentitl"
+                            />
+                            <span>
+                              <label for="REDOPENWORD">Opening Word</label>
+                              <input
+                                type="text"
+                                id="REDOPENWORD"
+                                class="form-control"
+                                formControlName="redopenword"
+                                [(ngModel)]="this.redopenwor"
+                              />
+                            </span>
+                          </p>
+                        </blockquote>
+                        <p>
+                          <label for="P4">Paragraph 4</label>
+                          <input
+                            type="text"
+                            id="P4"
+                            class="form-control"
+                            formControlName="pargraph4"
+                            [(ngModel)]="this.pargrap4"
+                          />
+                        </p>
+                        <p></p>
+                        <h3>
+                          <label for="TITLE2">Second Title</label>
+                          <input
+                            type="text"
+                            id="TITLE2"
+                            class="form-control"
+                            formControlName="title2"
+                            [(ngModel)]="this.titl2"
+                          />
+                        </h3>
+                        <p>
+                          <label for="TITLE2P"
+                            >Paragraph Of The Second Title</label
+                          >
+                          <input
+                            type="text"
+                            id="TITLE2P"
+                            class="form-control"
+                            formControlName="title2paragraph"
+                            [(ngModel)]="this.titl2paragraph"
+                          />
+                        </p>
+                      </div>
+                      <div class="upk-container">
+                        <div class="upk-item">
+                          <div class="upk-item-box">
+                            <div class="upk-img-wrap">
+                              <div class="upk-category">
+                                <label for="category">Blog Category</label>
+                                <input
+                                  type="text"
+                                  id="category"
+                                  class="form-control"
+                                  formControlName="category"
+                                  [(ngModel)]="this.categor"
+                                />
+                              </div>
+                            </div>
+                            <div class="upk-content">
+                              <div class="upk-content-wrap">
+                                <h3 class="upk-title">
+                                  <label for="BLOGCARDNAME"
+                                    >Blog Name In Card</label
+                                  >
+                                  <input
+                                    type="text"
+                                    id="BLOGCARDNAME"
+                                    class="form-control"
+                                    formControlName="blogName"
+                                    [(ngModel)]="this.blogNam"
+                                  />
+                                </h3>
+                                <div class="upk-text">
+                                  <p>
+                                    <label for="BLOGCAPTION"
+                                      >Blog Caption In Card</label
+                                    >
+                                    <input
+                                      type="text"
+                                      id="BLOGCAPTION"
+                                      class="form-control"
+                                      formControlName="blogCaption"
+                                      [(ngModel)]="this.blogCaptio"
+                                    />
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6" dir="rtl">
+                      <h2
+                        style="
+                          text-align: center;
+                          margin: 46px auto 0 0;
+                          color: #ffe5e0;
+                        "
+                      >
+                        المقال بالعربية
+                      </h2>
+                      <div class="bacon-blog-post-inner">
+                        <h2>
+                          <label for="BLOGTITLE">عنوان المقال</label>
+                          <input
+                            type="text"
+                            id="BLOGTITLE"
+                            class="form-control"
+                            formControlName="titleAr"
+                            [(ngModel)]="this.titlAr"
+                          />
+                        </h2>
+                        <p>
+                          <label for="P1">مقال 1</label>
+                          <input
+                            type="text"
+                            id="P1"
+                            class="form-control"
+                            formControlName="pargraph1Ar"
+                            [(ngModel)]="this.pargrap1Ar"
+                          />
+                        </p>
+                        <p>
+                          <label for="P2">مقال 2</label>
+                          <input
+                            type="text"
+                            id="P2"
+                            class="form-control"
+                            formControlName="pargraph2Ar"
+                            [(ngModel)]="this.pargrap2Ar"
+                          />
+                        </p>
+                        <p>
+                          <label for="P3">مقال 3</label>
+                          <input
+                            type="text"
+                            id="P3"
+                            class="form-control"
+                            formControlName="pargraph3Ar"
+                            [(ngModel)]="this.pargrap3Ar"
+                          />
+                        </p>
+                        <blockquote
+                          style="
+                            border-left: 0;
+                            border-right: #e0282b solid 0.25em;
+                          "
+                        >
+                          <p>
+                            <label for="REDLINEP1">مقال مهم 1</label>
+                            <input
+                              type="text"
+                              id="REDLINEP1"
+                              class="form-control"
+                              formControlName="redlineparagprah1Ar"
+                              [(ngModel)]="this.redlineparagpra1Ar"
+                            />
+                          </p>
+                          <p>
+                            <label for="REDLINEP2">مقال مهم 2</label>
+                            <input
+                              type="text"
+                              id="REDLINEP2"
+                              class="form-control"
+                              formControlName="redlineparagprah2Ar"
+                              [(ngModel)]="this.redlineparagpra2Ar"
+                            />
+                          </p>
+                          <p>
+                            <label for="REDOPENTITLE">عنوان افتتاحى</label>
+                            <input
+                              type="text"
+                              id="REDOPENTITLE"
+                              class="form-control"
+                              formControlName="redopentitleAr"
+                              [(ngModel)]="this.redopentitlAr"
+                            />
+                            <span>
+                              <label for="REDOPENWORD">كلمة افتتاحية</label>
+                              <input
+                                type="text"
+                                id="REDOPENWORD"
+                                class="form-control"
+                                formControlName="redopenwordAr"
+                                [(ngModel)]="this.redopenworAr"
+                              />
+                            </span>
+                          </p>
+                        </blockquote>
+                        <p>
+                          <label for="P4">مقال 4</label>
+                          <input
+                            type="text"
+                            id="P4"
+                            class="form-control"
+                            formControlName="pargraph4Ar"
+                            [(ngModel)]="this.pargrap4Ar"
+                          />
+                        </p>
+                        <p></p>
+                        <h3>
+                          <label for="TITLE2">عنوان ثانى</label>
+                          <input
+                            type="text"
+                            id="TITLE2"
+                            class="form-control"
+                            formControlName="title2Ar"
+                            [(ngModel)]="this.titl2Ar"
+                          />
+                        </h3>
+                        <p>
+                          <label for="TITLE2P">مقال العنوان الثانى</label>
+                          <input
+                            type="text"
+                            id="TITLE2P"
+                            class="form-control"
+                            formControlName="title2paragraphAr"
+                            [(ngModel)]="this.titl2paragraphAr"
+                          />
+                        </p>
+                        <div class="upk-container">
+                          <div class="upk-item">
+                            <div class="upk-item-box">
+                              <div class="upk-img-wrap">
+                                <label for="category">تصنيف المقال</label>
+                                <input
+                                  type="text"
+                                  id="category"
+                                  class="form-control"
+                                  formControlName="categoryAr"
+                                  [(ngModel)]="this.categorAr"
+                                />
+                              </div>
+                              <div class="upk-content">
+                                <div class="upk-content-wrap">
+                                  <h3 class="upk-title">
+                                    <label for="BLOGCARDNAME"
+                                      >اسم المقال بالكارت</label
+                                    >
+                                    <input
+                                      type="text"
+                                      id="BLOGCARDNAME"
+                                      class="form-control"
+                                      formControlName="blogNameArb"
+                                      [(ngModel)]="this.blogNameAr"
+                                    />
+                                  </h3>
+                                  <div class="upk-text">
+                                    <p>
+                                      <label for="BLOGCAPTION"
+                                        >شرح المقال فى الكارت</label
+                                      >
+                                      <input
+                                        type="text"
+                                        id="BLOGCAPTION"
+                                        class="form-control"
+                                        formControlName="blogCaptionArb"
+                                        [(ngModel)]="this.blogCaptioArb"
+                                      />
+                                    </p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xs-12 buttonform">
+              <button
+                type="submit"
+                class="btn btn-success"
+                [disabled]="!recipeForm.valid"
+              >
+                {{ "SAVEDATA" | translate }}
+              </button>
+              <button type="button" class="btn btn-danger" (click)="onCancel()">
+                {{ "CANCEL" | translate }}
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- End Form -->
+
+    <div class="col-xs-12">
+      <div class="padding-wid">
+        <div class="row">
+          <div class="col-md-4 col-xs-12">
+            <div
+              style="margin-top: 20px; margin-bottom: 17px"
+              *ngIf="this.toggling === 'true'"
+            >
+              <input
+                type="search"
+                class="form-control rounded"
+                placeholder="Search"
+                [(ngModel)]="filtering"
+                aria-label="Search"
+                aria-describedby="search-addon"
+              />
+              <span id="search-addon">
+                <i class="fas fa-search"></i>
+              </span>
+            </div>
+            <div
+              style="margin-top: 20px; margin-bottom: 17px"
+              *ngIf="this.toggling === 'false'"
+            >
+              <input
+                type="search"
+                class="form-control rounded"
+                placeholder="بحث"
+                [(ngModel)]="filtering"
+                aria-label="Search"
+                aria-describedby="search-addon"
+              />
+
+              <span id="search-addonArab">
+                <i class="fas fa-search"></i>
+              </span>
+            </div>
+          </div>
+          <div class="col-md-2 col-xs-6">
+            <p class="lengthaya">
+              &nbsp;{{ "COUNTERPROJ" | translate }} &nbsp;<span>{{
+                lengthaya
+              }}</span>
+              &nbsp;
+            </p>
+          </div>
+        </div>
+        <div class="blog">
+          <div class="row">
+            <div class="col-xs-12">
+              <ul style="list-style: none">
+                <li *ngFor="let recipeEl of recipes | filter: filtering">
+                  <div
+                    class="col-md-3 col-xs-12"
+                    *ngIf="this.toggling === 'true'"
+                  >
+                    <div class="blogaya" *ngIf="recipeEl.blogImgUrl != ''">
+                      <img [src]="recipeEl.blogImgUrl" alt="" />
+                      <p>
+                        {{ recipeEl.blogCaption }}
+                      </p>
+                      <button [routerLink]="[recipeEl.blogName, recipeEl.id]">
+                        {{ "MOREDET" | translate }}
+                      </button>
+                    </div>
+                    <div class="blogat" *ngIf="recipeEl.blogImgUrl === ''">
+                      <h3>{{ recipeEl.blogName }}</h3>
+                      <p>
+                        {{ recipeEl.blogCaption }}
+                      </p>
+                      <button [routerLink]="[recipeEl.blogName, recipeEl.id]">
+                        {{ "MOREDET" | translate }}
+                      </button>
+                    </div>
+                  </div>
+
+                  <div
+                    class="col-md-3 col-xs-12"
+                    *ngIf="this.toggling === 'false'"
+                  >
+                    <div class="blogaya" *ngIf="recipeEl.blogImgUrl != ''">
+                      <img [src]="recipeEl.blogImgUrl" alt="" />
+                      <p>
+                        {{ recipeEl.blogCaptionArb }}
+                      </p>
+                      <button [routerLink]="[recipeEl.blogName, recipeEl.id]">
+                        {{ "MOREDET" | translate }}
+                      </button>
+                    </div>
+                    <div class="blogat" *ngIf="recipeEl.blogImgUrl === ''">
+                      <h3>{{ recipeEl.blogNameArb }}</h3>
+                      <p>
+                        {{ recipeEl.blogCaptionArb }}
+                      </p>
+                      <button [routerLink]="[recipeEl.blogName, recipeEl.id]">
+                        {{ "MOREDET" | translate }}
+                      </button>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a
+      href="https://wa.me/+201276013659"
+      class="btn-whatsapp-pulse btn-whatsapp-pulse-border"
+    >
+      <i class="fab fa-whatsapp"></i>
+    </a>
+  </div>
+</div>
+<app-footer></app-footer>
