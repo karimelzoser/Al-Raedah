@@ -119,10 +119,233 @@
             (change)="changeCity($event)"
             formControlName="service"
           >
-            <option *ngFor="let service of services" [ngValue]="service">
-              {{ service }}
+            <option value="مبيعات + نظام الفاتورة الالكترونية">
+              مبيعات + نظام الفاتورة الالكترونية
             </option>
+            <option value="نظام محاسبي متكامل ERP">
+              نظام محاسبي متكامل ERP
+            </option>
+            <option value="المتاجر الالكترونية">المتاجر الالكترونية</option>
+            <option value="نظام محاسبي وادارة المخزن">
+              نظام محاسبي وادارة المخزن
+            </option>
+            <option value="ادارة قاعات الافراح">ادارة قاعات الافراح</option>
           </select>
+        </div>
+
+        <div *ngIf="this.graph === 'نظام محاسبي متكامل ERP'">
+          <div class="col-md-4 badpad"></div>
+          <div class="col-md-4 col-xs-12 badpad" style="margin-left: -47px">
+            <div class="col-xs-9" style="padding: 0">
+              <label for="motion" style="padding: 0; font-size: 14px">{{
+                "ERP1" | translate
+              }}</label>
+            </div>
+            <div class="col-xs-3" style="padding: 0">
+              <input
+                type="radio"
+                id="last"
+                name="last"
+                style="height: 15px !important"
+                value="باقة دورة المبيعات"
+                class="form-control radioStyle"
+                formControlName="dserv"
+              />
+            </div>
+          </div>
+          <div class="col-md-4 col-xs-12 badpad">
+            <div class="col-xs-9" style="padding: 0">
+              <label for="motion" style="padding: 0; font-size: 14px">{{
+                "ERP2" | translate
+              }}</label>
+            </div>
+            <div class="col-xs-3" style="padding: 0">
+              <input
+                type="radio"
+                id="last"
+                name="last"
+                style="height: 15px !important"
+                value="نظام تصنيع"
+                class="form-control radioStyle"
+                formControlName="dserv"
+              />
+            </div>
+          </div>
+          <div class="col-xs-12 badpad">
+            <div class="col-xs-9" style="padding: 0">
+              <label for="motion" style="padding: 0; font-size: 14px">{{
+                "ERP3" | translate
+              }}</label>
+            </div>
+            <div class="col-xs-3" style="padding: 0">
+              <input
+                type="radio"
+                id="last"
+                name="last"
+                style="height: 15px !important"
+                value="باقة المخازن"
+                class="form-control radioStyle"
+                formControlName="dserv"
+              />
+            </div>
+          </div>
+          <div class="col-xs-12 badpad">
+            <div class="col-xs-9" style="padding: 0">
+              <label for="motion" style="padding: 0; font-size: 14px">{{
+                "ERP4" | translate
+              }}</label>
+            </div>
+            <div class="col-xs-3" style="padding: 0">
+              <input
+                type="radio"
+                id="last"
+                name="last"
+                style="height: 15px !important"
+                value="اضافة باقة HR"
+                class="form-control radioStyle"
+                formControlName="dserv"
+              />
+            </div>
+          </div>
+          <div class="col-xs-12 badpad">
+            <div class="col-xs-9" style="padding: 0">
+              <label for="motion" style="padding: 0; font-size: 14px">{{
+                "ERP5" | translate
+              }}</label>
+            </div>
+            <div class="col-xs-3" style="padding: 0">
+              <input
+                type="radio"
+                id="last"
+                name="last"
+                style="height: 15px !important"
+                value="اضافة باقة دورة المشتريات"
+                class="form-control radioStyle"
+                formControlName="dserv"
+              />
+            </div>
+          </div>
+        </div>
+        <div *ngIf="this.graph === 'مبيعات + نظام الفاتورة الالكترونية'">
+          <div class="col-xs-12">
+            <div class="stick">
+              <div class="row">
+                <div class="col-xs-12 spacingS">
+                  {{ "SAL1" | translate }}
+                </div>
+                <div class="col-xs-12 spacingS">
+                  {{ "SAL2" | translate }}
+                </div>
+                <div class="col-xs-12 spacingS">
+                  {{ "SAL3" | translate }}
+                </div>
+                <div class="col-xs-12 spacingS">
+                  {{ "SAL4" | translate }}
+                </div>
+                <div class="col-xs-12 spacingS">
+                  {{ "SAL5" | translate }}
+                </div>
+                <div class="col-xs-12 spacingS">
+                  {{ "SAL6" | translate }}
+                </div>
+                <div class="col-xs-12 spacingS">
+                  {{ "SAL7" | translate }}
+                </div>
+                <div class="col-xs-12 spacingS">
+                  {{ "SAL8" | translate }}
+                </div>
+                <div class="col-xs-12 spacingS">
+                  {{ "SAL9" | translate }}
+                </div>
+                <div class="col-xs-12 spacingS">
+                  {{ "SAL10" | translate }}
+                </div>
+                <div class="col-xs-12 spacingS">
+                  {{ "SAL11" | translate }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="this.graph === 'المتاجر الالكترونية'"></div>
+        <div *ngIf="this.graph === 'نظام محاسبي وادارة المخزن'">
+          <div class="col-xs-12">
+            <div class="stick">
+              <div class="row">
+                <div class="col-md-6 col-xs-12 spacing">
+                  {{ "STOR2" | translate }}
+                </div>
+                <div class="col-md-6 col-xs-12 spacing">
+                  {{ "STOR1" | translate }}
+                </div>
+                <div class="col-md-6 col-xs-12 spacing">
+                  {{ "STOR4" | translate }}
+                </div>
+                <div class="col-md-6 col-xs-12 spacing">
+                  {{ "STOR3" | translate }}
+                </div>
+                <div class="col-md-6 col-xs-12 spacing">
+                  {{ "STOR6" | translate }}
+                </div>
+                <div class="col-md-6 col-xs-12 spacing">
+                  {{ "STOR5" | translate }}
+                </div>
+                <div class="col-md-6 col-xs-12 spacing">
+                  {{ "STOR8" | translate }}
+                </div>
+                <div class="col-md-6 col-xs-12 spacing">
+                  {{ "STOR7" | translate }}
+                </div>
+                <div class="col-md-6 col-xs-12 spacing">
+                  {{ "STOR10" | translate }}
+                </div>
+                <div class="col-md-6 col-xs-12 spacing">
+                  {{ "STOR9" | translate }}
+                </div>
+                <div class="col-md-6 col-xs-12 spacing">
+                  {{ "STOR12" | translate }}
+                </div>
+                <div class="col-md-6 col-xs-12 spacing">
+                  {{ "STOR11" | translate }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="this.graph === 'ادارة قاعات الافراح'">
+          <div class="col-xs-12">
+            <div class="stick">
+              <div class="row">
+                <div class="col-xs-12 spacing">
+                  {{ "WED1" | translate }}
+                </div>
+                <div class="col-xs-12 spacing">
+                  {{ "WED2" | translate }}
+                </div>
+                <div class="col-xs-12 spacing">
+                  {{ "WED3" | translate }}
+                </div>
+                <div class="col-xs-12 spacing">
+                  {{ "WED4" | translate }}
+                </div>
+                <div class="col-xs-12 spacing">
+                  {{ "WED5" | translate }}
+                </div>
+                <div class="col-xs-12 spacing">
+                  {{ "WED6" | translate }}
+                </div>
+                <div class="col-xs-12 spacing">
+                  {{ "WED7" | translate }}
+                </div>
+                <div class="col-xs-12 spacing">
+                  {{ "WED8" | translate }}
+                </div>
+                <div class="col-xs-12 spacing">
+                  {{ "WED9" | translate }}
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div class="col-xs-6">
@@ -256,10 +479,236 @@
             (change)="changeCity($event)"
             formControlName="service"
           >
-            <option *ngFor="let service of servicesAr" [ngValue]="service">
-              {{ service }}
+            <option value="Sales + Electronic Invoice System">
+              Sales + Electronic Invoice System
+            </option>
+            <option value="An integrated accounting system ERP">
+              An integrated accounting system ERP
+            </option>
+            <option value="Ecommerce">Ecommerce</option>
+            <option value="Accounting system and warehouse management">
+              Accounting system and warehouse management
+            </option>
+            <option value="Wedding hall management">
+              Wedding hall management
             </option>
           </select>
+        </div>
+
+        <div *ngIf="this.graph === 'An integrated accounting system ERP'">
+          <div class="col-md-4 col-xs-12 badpad margin-l">
+            <div class="col-xs-3" style="padding: 0">
+              <input
+                type="radio"
+                id="last"
+                name="last"
+                style="height: 15px !important"
+                value="Selling Course Package"
+                class="form-control radioStyle"
+                formControlName="dserv"
+              />
+            </div>
+            <div class="col-xs-9" style="padding: 0">
+              <label for="motion" style="padding: 0; font-size: 14px">{{
+                "ERP1" | translate
+              }}</label>
+            </div>
+          </div>
+          <div class="col-md-4 col-xs-12 badpad">
+            <div class="col-xs-3" style="padding: 0">
+              <input
+                type="radio"
+                id="last"
+                name="last"
+                style="height: 15px !important"
+                value="Industry System"
+                class="form-control radioStyle"
+                formControlName="dserv"
+              />
+            </div>
+            <div class="col-xs-9" style="padding: 0">
+              <label for="motion" style="padding: 0; font-size: 14px">{{
+                "ERP2" | translate
+              }}</label>
+            </div>
+          </div>
+          <div class="col-xs-12 badpad">
+            <div class="col-xs-3" style="padding: 0">
+              <input
+                type="radio"
+                id="last"
+                name="last"
+                style="height: 15px !important"
+                value="Stores Package"
+                class="form-control radioStyle"
+                formControlName="dserv"
+              />
+            </div>
+            <div class="col-xs-9" style="padding: 0">
+              <label for="motion" style="padding: 0; font-size: 14px">{{
+                "ERP3" | translate
+              }}</label>
+            </div>
+          </div>
+          <div class="col-xs-12 badpad">
+            <div class="col-xs-3" style="padding: 0">
+              <input
+                type="radio"
+                id="last"
+                name="last"
+                style="height: 15px !important"
+                value="Add HR Package"
+                class="form-control radioStyle"
+                formControlName="dserv"
+              />
+            </div>
+            <div class="col-xs-9" style="padding: 0">
+              <label for="motion" style="padding: 0; font-size: 14px">{{
+                "ERP4" | translate
+              }}</label>
+            </div>
+          </div>
+          <div class="col-xs-12 badpad">
+            <div class="col-xs-3" style="padding: 0">
+              <input
+                type="radio"
+                id="last"
+                name="last"
+                style="height: 15px !important"
+                value="Add purchases Course Package"
+                class="form-control radioStyle"
+                formControlName="dserv"
+              />
+            </div>
+            <div class="col-xs-9" style="padding: 0">
+              <label for="motion" style="padding: 0; font-size: 14px">{{
+                "ERP5" | translate
+              }}</label>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="this.graph === 'Sales + Electronic Invoice System'">
+          <div class="col-xs-12">
+            <div class="stick">
+              <div class="row">
+                <div class="col-xs-12 spacingS">
+                  {{ "SAL1" | translate }}
+                </div>
+                <div class="col-xs-12 spacingS">
+                  {{ "SAL2" | translate }}
+                </div>
+                <div class="col-xs-12 spacingS">
+                  {{ "SAL3" | translate }}
+                </div>
+                <div class="col-xs-12 spacingS">
+                  {{ "SAL4" | translate }}
+                </div>
+                <div class="col-xs-12 spacingS">
+                  {{ "SAL5" | translate }}
+                </div>
+                <div class="col-xs-12 spacingS">
+                  {{ "SAL6" | translate }}
+                </div>
+                <div class="col-xs-12 spacingS">
+                  {{ "SAL7" | translate }}
+                </div>
+                <div class="col-xs-12 spacingS">
+                  {{ "SAL8" | translate }}
+                </div>
+                <div class="col-xs-12 spacingS">
+                  {{ "SAL9" | translate }}
+                </div>
+                <div class="col-xs-12 spacingS">
+                  {{ "SAL10" | translate }}
+                </div>
+                <div class="col-xs-12 spacingS">
+                  {{ "SAL11" | translate }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="this.graph === 'Ecommerce'"></div>
+        <div
+          *ngIf="this.graph === 'Accounting system and warehouse management'"
+        >
+          <div class="col-xs-12">
+            <div class="stick">
+              <div class="row">
+                <div class="col-md-6 col-xs-12 spacing">
+                  {{ "STOR1" | translate }}
+                </div>
+                <div class="col-md-6 col-xs-12 spacing">
+                  {{ "STOR2" | translate }}
+                </div>
+                <div class="col-md-6 col-xs-12 spacing">
+                  {{ "STOR3" | translate }}
+                </div>
+                <div class="col-md-6 col-xs-12 spacing">
+                  {{ "STOR4" | translate }}
+                </div>
+                <div class="col-md-6 col-xs-12 spacing">
+                  {{ "STOR5" | translate }}
+                </div>
+                <div class="col-md-6 col-xs-12 spacing">
+                  {{ "STOR6" | translate }}
+                </div>
+                <div class="col-md-6 col-xs-12 spacing">
+                  {{ "STOR7" | translate }}
+                </div>
+                <div class="col-md-6 col-xs-12 spacing">
+                  {{ "STOR8" | translate }}
+                </div>
+                <div class="col-md-6 col-xs-12 spacing">
+                  {{ "STOR9" | translate }}
+                </div>
+                <div class="col-md-6 col-xs-12 spacing">
+                  {{ "STOR10" | translate }}
+                </div>
+                <div class="col-md-6 col-xs-12 spacing">
+                  {{ "STOR11" | translate }}
+                </div>
+                <div class="col-md-6 col-xs-12 spacing">
+                  {{ "STOR12" | translate }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="this.graph === 'Wedding hall management'">
+          <div class="col-xs-12">
+            <div class="stick">
+              <div class="row">
+                <div class="col-xs-12 spacing">
+                  {{ "WED1" | translate }}
+                </div>
+                <div class="col-xs-12 spacing">
+                  {{ "WED2" | translate }}
+                </div>
+                <div class="col-xs-12 spacing">
+                  {{ "WED3" | translate }}
+                </div>
+                <div class="col-xs-12 spacing">
+                  {{ "WED4" | translate }}
+                </div>
+                <div class="col-xs-12 spacing">
+                  {{ "WED5" | translate }}
+                </div>
+                <div class="col-xs-12 spacing">
+                  {{ "WED6" | translate }}
+                </div>
+                <div class="col-xs-12 spacing">
+                  {{ "WED7" | translate }}
+                </div>
+                <div class="col-xs-12 spacing">
+                  {{ "WED8" | translate }}
+                </div>
+                <div class="col-xs-12 spacing">
+                  {{ "WED9" | translate }}
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div class="col-xs-12">

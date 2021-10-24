@@ -16,7 +16,13 @@
   color: #070000;
   margin: 0 auto;
 }
-
+select {
+  font-weight: bold;
+}
+select,
+option {
+  color: rgb(43, 88, 118);
+}
 .orderSec h3 {
   text-align: center;
   font-size: 38px;

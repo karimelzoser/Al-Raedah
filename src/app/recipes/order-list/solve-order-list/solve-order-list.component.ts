@@ -64,6 +64,7 @@ export class SolveOrderListComponent implements OnInit {
             service: e.payload.doc.data()['service'],
             phone: e.payload.doc.data()['phone'],
             email: e.payload.doc.data()['email'],
+            dserv: e.payload.doc.data()['dserv'],
 
             timestamp: e.payload.doc.data()['timestamp'],
           };

@@ -94,6 +94,12 @@ export class FirestoreService {
       .snapshotChanges()
       .pipe(take(2));
   }
+  get_allOrdersCourses() {
+    return this.fireservices
+      .collection('orderListCourses', (ref) => ref.orderBy('timestamp', 'desc'))
+      .snapshotChanges()
+      .pipe(take(2));
+  }
 
   get_allBlogs() {
     return this.fireservices
@@ -144,6 +150,9 @@ export class FirestoreService {
   }
   create_newOrderGraphic(orders) {
     return this.fireservices.collection('orderListGraphic').add(orders);
+  }
+  create_newOrderCourses(orders) {
+    return this.fireservices.collection('orderListCourses').add(orders);
   }
 
   // createProject(project, recipe) {
@@ -229,6 +238,9 @@ export class FirestoreService {
   }
   delete_OrderGraphic(Id) {
     this.fireservices.doc('orderListGraphic/' + Id).delete();
+  }
+  delete_OrderCourses(Id) {
+    this.fireservices.doc('orderListCourses/' + Id).delete();
   }
   delete_Order(Id) {
     this.fireservices.doc('orderList/' + Id).delete();

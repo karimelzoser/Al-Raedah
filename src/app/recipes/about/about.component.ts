@@ -69,7 +69,7 @@ export class AboutComponent implements OnInit {
     this.router.navigate(['/order/bussiness-order']);
   }
   formpopE() {
-    this.router.navigate(['/order/ecommerce-order']);
+    this.router.navigate(['/order/solve-problems-order']);
   }
   formpopN() {
     this.router.navigate(['/order/network-order']);
@@ -84,7 +84,7 @@ export class AboutComponent implements OnInit {
     this.router.navigate(['/order/mobile-app-order']);
   }
   formpopW() {
-    this.router.navigate(['/order/wev-development-order']);
+    this.router.navigate(['/order/web-development-order']);
   }
   formpopEV() {
     this.router.navigate(['/order/event-order']);

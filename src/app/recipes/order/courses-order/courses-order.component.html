@@ -1,0 +1,559 @@
+<div class="covering">
+  <app-heading></app-heading>
+  <div class="orderSec">
+    <h3>{{ "ORDERCourses" | translate }}</h3>
+    <div class="forms" *ngIf="this.toggling === 'false'">
+      <form
+        id="send"
+        dir="rtl"
+        [formGroup]="orderForm"
+        (ngSubmit)="onSubmitOrder()"
+      >
+        <div class="col-xs-12 form-group">
+          <div class="col-xs-8">
+            <input
+              class="form-control input-lg"
+              type="text"
+              name="username"
+              id="name"
+              placeholder=""
+              formControlName="name"
+            />
+          </div>
+          <div class="col-xs-4">
+            <label for="username"
+              >{{ "username" | translate }} <span> *</span></label
+            >
+          </div>
+        </div>
+
+        <div class="col-xs-12 form-group">
+          <div class="col-xs-8">
+            <input
+              class="form-control input-lg"
+              type="text"
+              name="companyName"
+              id="companyName"
+              placeholder=""
+              formControlName="companyName"
+            />
+          </div>
+          <div class="col-xs-4">
+            <label for="companyName"
+              >{{ "companyName" | translate }} <span> *</span></label
+            >
+          </div>
+        </div>
+
+        <div class="col-xs-12 form-group">
+          <div class="col-xs-8">
+            <input
+              class="form-control input-lg"
+              type="text"
+              name="field"
+              id="field"
+              placeholder=""
+              formControlName="field"
+            />
+          </div>
+          <div class="col-xs-4">
+            <label for="field">{{ "field" | translate }} <span> *</span></label>
+          </div>
+        </div>
+
+        <div class="col-xs-12 form-group">
+          <div class="col-xs-8">
+            <input
+              class="form-control input-lg"
+              type="text"
+              name="address"
+              id="address"
+              placeholder=""
+              formControlName="address"
+            />
+          </div>
+          <div class="col-xs-4">
+            <label for="address"
+              >{{ "address" | translate }} <span> *</span></label
+            >
+          </div>
+        </div>
+        <div class="col-xs-12 form-group">
+          <div class="col-xs-8">
+            <input
+              class="form-control input-lg"
+              type="option"
+              name="phone"
+              id="phone"
+              placeholder=""
+              formControlName="phone"
+            />
+          </div>
+          <div class="col-xs-4">
+            <label for="phone">{{ "phone" | translate }} <span> *</span></label>
+          </div>
+        </div>
+        <div class="col-xs-12 form-group">
+          <div class="col-xs-8">
+            <input
+              class="form-control input-lg"
+              type="option"
+              name="email"
+              id="email"
+              placeholder=""
+              formControlName="email"
+            />
+          </div>
+          <div class="col-xs-4">
+            <label for="email">{{ "email" | translate }} <span> *</span></label>
+          </div>
+        </div>
+
+        <div class="col-xs-12 form-group marginging">
+          <label for="service"
+            >{{ "serviceCH" | translate }} <span> *</span></label
+          >
+          <select
+            class="form-control input-lg"
+            style="height: 47px !important"
+            (change)="changeCity($event)"
+            formControlName="service"
+          >
+            <option value="دورة برمجة الموبيل">دورة برمجة الموبيل</option>
+            <option value="دورة برمجة الويب">دورة برمجة الويب</option>
+          </select>
+        </div>
+        <div *ngIf="this.graph === 'دورة برمجة الموبيل'">
+          <div class="col-md-4 col-xs-6 badpad"></div>
+
+          <div class="col-md-4 col-xs-6 badpad">
+            <div class="col-xs-9" style="padding: 0">
+              <label for="motion" style="padding: 0; font-size: 18px">{{
+                "INGROUP" | translate
+              }}</label>
+            </div>
+            <div class="col-xs-3" style="padding: 0">
+              <input
+                type="radio"
+                id="last"
+                name="last"
+                style="height: 15px !important"
+                value="كورس خاص"
+                class="form-control radioStyle"
+                formControlName="dserv"
+              />
+            </div>
+          </div>
+          <div class="col-md-4 col-xs-6 badpad">
+            <div class="col-xs-9" style="padding: 0">
+              <label for="motion" style="padding: 0; font-size: 18px">{{
+                "PRIVATE" | translate
+              }}</label>
+            </div>
+            <div class="col-xs-3" style="padding: 0">
+              <input
+                type="radio"
+                id="last"
+                name="last"
+                style="height: 15px !important"
+                value="داخل المجموعة"
+                class="form-control radioStyle"
+                formControlName="dserv"
+              />
+            </div>
+          </div>
+          <div class="col-xs-12">
+            <div class="stick">
+              <h4>{{ "COURSETITLE" | translate }}</h4>
+              <div class="row">
+                <div class="col-xs-6">
+                  {{ "COU1" | translate }}
+                </div>
+                <div class="col-xs-6">
+                  {{ "COU2" | translate }}
+                </div>
+                <div class="col-xs-6">
+                  {{ "COU3" | translate }}
+                </div>
+                <div class="col-xs-6">
+                  {{ "COU4" | translate }}
+                </div>
+                <div class="col-xs-6">
+                  {{ "COU5" | translate }}
+                </div>
+                <div class="col-xs-6">
+                  {{ "COU6" | translate }}
+                </div>
+              </div>
+              <h2>{{ "COURSEDUR" | translate }}</h2>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="this.graph === 'دورة برمجة الويب'">
+          <div class="col-md-4 col-xs-6 badpad"></div>
+
+          <div class="col-md-4 col-xs-6 badpad">
+            <div class="col-xs-9" style="padding: 0">
+              <label for="motion" style="padding: 0; font-size: 18px">{{
+                "INGROUP" | translate
+              }}</label>
+            </div>
+            <div class="col-xs-3" style="padding: 0">
+              <input
+                type="radio"
+                id="last"
+                name="last"
+                style="height: 15px !important"
+                value="كورس خاص"
+                class="form-control radioStyle"
+                formControlName="dserv"
+              />
+            </div>
+          </div>
+          <div class="col-md-4 col-xs-6 badpad">
+            <div class="col-xs-9" style="padding: 0">
+              <label for="motion" style="padding: 0; font-size: 18px">{{
+                "PRIVATE" | translate
+              }}</label>
+            </div>
+            <div class="col-xs-3" style="padding: 0">
+              <input
+                type="radio"
+                id="last"
+                name="last"
+                style="height: 15px !important"
+                value="داخل المجموعة"
+                class="form-control radioStyle"
+                formControlName="dserv"
+              />
+            </div>
+          </div>
+          <div class="col-xs-12">
+            <div class="stick">
+              <h4>{{ "COURSETITLEDE" | translate }}</h4>
+              <div class="row">
+                <div class="col-xs-6">
+                  {{ "COUDE1" | translate }}
+                </div>
+                <div class="col-xs-6">
+                  {{ "COUDE2" | translate }}
+                </div>
+                <div class="col-xs-6">
+                  {{ "COUDE3" | translate }}
+                </div>
+                <div class="col-xs-6">
+                  {{ "COUDE4" | translate }}
+                </div>
+                <div class="col-xs-6">
+                  {{ "COUDE5" | translate }}
+                </div>
+                <div class="col-xs-6">
+                  {{ "COUDE6" | translate }}
+                </div>
+                <div class="col-xs-6">
+                  {{ "COUDE7" | translate }}
+                </div>
+                <div class="col-xs-6">
+                  {{ "COUDE8" | translate }}
+                </div>
+                <div class="col-xs-6">
+                  {{ "COUDE9" | translate }}
+                </div>
+              </div>
+              <h2>{{ "COURSEDUR" | translate }}</h2>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-6">
+          <button
+            class="contact-btn"
+            style="float: left"
+            [disabled]="!orderForm.valid"
+            type="submit"
+            name="text"
+            value="Send"
+          >
+            {{ "SENDORDER" | translate }}
+          </button>
+        </div>
+      </form>
+    </div>
+    <div class="formsAr" *ngIf="this.toggling === 'true'">
+      <form
+        id="send"
+        dir="ltr"
+        [formGroup]="orderForm"
+        (ngSubmit)="onSubmitOrder()"
+      >
+        <div class="col-xs-12 form-group">
+          <div class="col-xs-4">
+            <label for="username"
+              >{{ "username" | translate }} <span> *</span></label
+            >
+          </div>
+          <div class="col-xs-8">
+            <input
+              class="form-control input-lg"
+              type="text"
+              name="username"
+              id="name"
+              placeholder=""
+              formControlName="name"
+            />
+          </div>
+        </div>
+
+        <div class="col-xs-12 form-group">
+          <div class="col-xs-4">
+            <label for="companyName"
+              >{{ "companyName" | translate }} <span> *</span></label
+            >
+          </div>
+          <div class="col-xs-8">
+            <input
+              class="form-control input-lg"
+              type="text"
+              name="companyName"
+              id="companyName"
+              placeholder=""
+              formControlName="companyName"
+            />
+          </div>
+        </div>
+
+        <div class="col-xs-12 form-group">
+          <div class="col-xs-4">
+            <label for="field">{{ "field" | translate }} <span> *</span></label>
+          </div>
+          <div class="col-xs-8">
+            <input
+              class="form-control input-lg"
+              type="text"
+              name="field"
+              id="field"
+              placeholder=""
+              formControlName="field"
+            />
+          </div>
+        </div>
+
+        <div class="col-xs-12 form-group">
+          <div class="col-xs-4">
+            <label for="address"
+              >{{ "address" | translate }} <span> *</span></label
+            >
+          </div>
+          <div class="col-xs-8">
+            <input
+              class="form-control input-lg"
+              type="text"
+              name="address"
+              id="address"
+              placeholder=""
+              formControlName="address"
+            />
+          </div>
+        </div>
+        <div class="col-xs-12 form-group">
+          <div class="col-xs-4">
+            <label for="phone">{{ "phone" | translate }} <span> *</span></label>
+          </div>
+          <div class="col-xs-8">
+            <input
+              class="form-control input-lg"
+              type="option"
+              name="phone"
+              id="phone"
+              placeholder=""
+              formControlName="phone"
+            />
+          </div>
+        </div>
+        <div class="col-xs-12 form-group">
+          <div class="col-xs-4">
+            <label for="email">{{ "email" | translate }} <span> *</span></label>
+          </div>
+          <div class="col-xs-8">
+            <input
+              class="form-control input-lg"
+              type="option"
+              name="email"
+              id="email"
+              placeholder=""
+              formControlName="email"
+            />
+          </div>
+        </div>
+        <div class="col-xs-12 form-group marginging">
+          <label for="service"
+            >{{ "serviceCH" | translate }} <span> *</span></label
+          >
+          <select
+            class="form-control input-lg"
+            style="height: 47px !important"
+            (change)="changeCity($event)"
+            formControlName="service"
+          >
+            <option value="Mobile Development Course">
+              Mobile Development Course
+            </option>
+            <option value="Web Development Course">
+              Web Development Course
+            </option>
+          </select>
+        </div>
+        <div *ngIf="this.graph === 'Mobile Development Course'">
+          <div class="col-md-4 col-xs-6 badpad">
+            <div class="col-xs-3" style="padding: 0">
+              <input
+                type="radio"
+                id="last"
+                name="last"
+                style="height: 15px !important"
+                value="Private"
+                class="form-control radioStyle"
+                formControlName="dserv"
+              />
+            </div>
+            <div class="col-xs-9" style="padding: 0">
+              <label for="motion" style="padding: 0; font-size: 18px">{{
+                "INGROUP" | translate
+              }}</label>
+            </div>
+          </div>
+          <div class="col-md-4 col-xs-6 badpad">
+            <div class="col-xs-3" style="padding: 0">
+              <input
+                type="radio"
+                id="last"
+                name="last"
+                style="height: 15px !important"
+                value="In Group"
+                class="form-control radioStyle"
+                formControlName="dserv"
+              />
+            </div>
+            <div class="col-xs-9" style="padding: 0">
+              <label for="motion" style="padding: 0; font-size: 18px">{{
+                "PRIVATE" | translate
+              }}</label>
+            </div>
+          </div>
+          <div class="col-xs-12">
+            <div class="stick">
+              <h4>{{ "COURSETITLE" | translate }}</h4>
+              <div class="row">
+                <div class="col-xs-6">
+                  {{ "COU2" | translate }}
+                </div>
+                <div class="col-xs-6">
+                  {{ "COU1" | translate }}
+                </div>
+                <div class="col-xs-6">
+                  {{ "COU4" | translate }}
+                </div>
+                <div class="col-xs-6">
+                  {{ "COU3" | translate }}
+                </div>
+                <div class="col-xs-6">
+                  {{ "COU6" | translate }}
+                </div>
+                <div class="col-xs-6">
+                  {{ "COU5" | translate }}
+                </div>
+              </div>
+              <h2>{{ "COURSEDUR" | translate }}</h2>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="this.graph === 'Web Development Course'">
+          <div class="col-md-4 col-xs-6 badpad">
+            <div class="col-xs-3" style="padding: 0">
+              <input
+                type="radio"
+                id="last"
+                name="last"
+                style="height: 15px !important"
+                value="Private"
+                class="form-control radioStyle"
+                formControlName="dserv"
+              />
+            </div>
+            <div class="col-xs-9" style="padding: 0">
+              <label for="motion" style="padding: 0; font-size: 18px">{{
+                "INGROUP" | translate
+              }}</label>
+            </div>
+          </div>
+          <div class="col-md-4 col-xs-6 badpad">
+            <div class="col-xs-3" style="padding: 0">
+              <input
+                type="radio"
+                id="last"
+                name="last"
+                style="height: 15px !important"
+                value="In Group"
+                class="form-control radioStyle"
+                formControlName="dserv"
+              />
+            </div>
+            <div class="col-xs-9" style="padding: 0">
+              <label for="motion" style="padding: 0; font-size: 18px">{{
+                "PRIVATE" | translate
+              }}</label>
+            </div>
+          </div>
+          <div class="col-xs-12">
+            <div class="stick">
+              <h4>{{ "COURSETITLEDE" | translate }}</h4>
+              <div class="row">
+                <div class="col-xs-6">
+                  {{ "COUDE2" | translate }}
+                </div>
+                <div class="col-xs-6">
+                  {{ "COUDE1" | translate }}
+                </div>
+                <div class="col-xs-6">
+                  {{ "COUDE4" | translate }}
+                </div>
+                <div class="col-xs-6">
+                  {{ "COUDE3" | translate }}
+                </div>
+                <div class="col-xs-6">
+                  {{ "COUDE6" | translate }}
+                </div>
+                <div class="col-xs-6">
+                  {{ "COUDE5" | translate }}
+                </div>
+                <div class="col-xs-6">
+                  {{ "COUDE8" | translate }}
+                </div>
+                <div class="col-xs-6">
+                  {{ "COUDE7" | translate }}
+                </div>
+                <div class="col-xs-6">
+                  {{ "COUDE9" | translate }}
+                </div>
+              </div>
+              <h2>{{ "COURSEDUR" | translate }}</h2>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-12">
+          <button
+            class="contact-btn"
+            style="float: right !important"
+            [disabled]="!orderForm.valid"
+            type="submit"
+            name="text"
+            value="Send"
+          >
+            {{ "SENDORDER" | translate }}
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

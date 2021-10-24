@@ -52,6 +52,8 @@ import { NetImpOrderComponent } from './order/net-imp-order/net-imp-order.compon
 import { NetImpOrderListComponent } from './order-list/net-imp-order-list/net-imp-order-list.component';
 import { GraphicOrderListComponent } from './order-list/graphic-order-list/graphic-order-list.component';
 import { GraphicOrderComponent } from './order/graphic-order/graphic-order.component';
+import { CoursesOrderComponent } from './order/courses-order/courses-order.component';
+import { CoursesOrderListComponent } from './order-list/courses-order-list/courses-order-list.component';
 
 @NgModule({
   declarations: [
@@ -99,6 +101,8 @@ import { GraphicOrderComponent } from './order/graphic-order/graphic-order.compo
     NetImpOrderListComponent,
     GraphicOrderListComponent,
     GraphicOrderComponent,
+    CoursesOrderComponent,
+    CoursesOrderListComponent,
   ],
   imports: [
     RouterModule,

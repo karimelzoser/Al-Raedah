@@ -47,6 +47,7 @@
 
               <th scope="col" class="sizingh">{{ "phone" | translate }}</th>
               <th scope="col" class="sizingh">{{ "email" | translate }}</th>
+              <th scope="col" class="sizingh">{{ "Packages" | translate }}</th>
               <th scope="col" class="sizingh">{{ "DELETE" | translate }}</th>
             </tr>
           </thead>
@@ -86,6 +87,11 @@
               <td data-label="Job Title" class="sizing">
                 <a class="text-heading font-semibold" href="#">
                   {{ order.email }}
+                </a>
+              </td>
+              <td data-label="Job Title" class="sizing">
+                <a class="text-heading font-semibold" href="#">
+                  {{ order.dserv }}
                 </a>
               </td>
 

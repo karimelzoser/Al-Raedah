@@ -27,7 +27,7 @@ export class HeadingComponent implements OnInit {
   ) {}
 
   navhome() {
-    this.router.navigate(['']);
+    this.router.navigate(['/home']);
   }
   navOrder(navs) {
     this.router.navigate([`/order-list/${navs}`], {

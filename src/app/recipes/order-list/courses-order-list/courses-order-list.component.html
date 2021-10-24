@@ -4,7 +4,7 @@
   <div class="container">
     <div class="card">
       <div class="card-header seven">
-        <h1 class="text-center">{{ "ORDERGraphicLIST" | translate }}</h1>
+        <h1 class="text-center">{{ "ORDERCoursesLIST" | translate }}</h1>
       </div>
       <div class="row">
         <div class="col-sm-4 col-xs-6">
@@ -48,14 +48,8 @@
               <th scope="col" class="sizingh">{{ "phone" | translate }}</th>
               <th scope="col" class="sizingh">{{ "email" | translate }}</th>
 
-              <th scope="lcol" class="sizingh">{{ "motion" | translate }}</th>
-              <th scope="col" class="sizingh">
-                {{ "motionTime" | translate }}
-              </th>
-              <th scope="col" class="sizingh">{{ "LangCH" | translate }}</th>
-              <th scope="col" class="sizingh">{{ "twoD" | translate }}</th>
+              <th scope="col" class="sizingh">{{ "Place" | translate }}</th>
 
-              <th scope="col" class="sizingh">{{ "message" | translate }}</th>
               <th scope="col" class="sizingh">{{ "DELETE" | translate }}</th>
             </tr>
           </thead>
@@ -97,29 +91,9 @@
                   {{ order.email }}
                 </a>
               </td>
-              <td data-label="Job Title" class="sizing">
-                <a
-                  class="text-heading font-semibold"
-                  *ngIf="order.motion === 'true'"
-                  href="#"
-                >
-                  <i class="fas fa-check"></i>
-                </a>
-              </td>
-              <td data-label="Job Title" class="sizing">
-                {{ order.motionTime }}
-              </td>
-              <td data-label="Job Title" class="sizing">
-                {{ order.lang }}
-              </td>
-              <td data-label="Job Title" class="sizing">
-                {{ order.dserv }}
-              </td>
 
               <td data-label="Job Title" class="sizing">
-                <a class="text-heading font-semibold" href="#">
-                  {{ order.message }}
-                </a>
+                {{ order.dserv }}
               </td>
 
               <td data-label="" class="sizing">

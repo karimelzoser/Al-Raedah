@@ -11,7 +11,7 @@
   margin-top: 130px;
   border-radius: 5px;
 
-  height: 1200px;
+  height: 1800px;
   width: 800px;
   color: #070000;
   margin: 0 auto;
@@ -73,12 +73,59 @@
   height: 100px !important;
 }
 
+.badpad {
+  padding-bottom: 15px;
+}
+.stick {
+  padding: 20px 40px;
+  border: 1px solid #afafaf;
+  color: rgb(44, 89, 120);
+  background-color: rgb(229, 229, 229);
+  margin-bottom: 40px;
+}
+.stick h4 {
+  font-size: 20px;
+  font-weight: bold;
+}
+.stick h2 {
+  margin-top: 70px;
+  margin-bottom: 20px;
+}
+.stick .col-xs-6 {
+  margin: 8px 0;
+  font-weight: bold;
+}
+.stick .spacing {
+  margin: 8px 0;
+}
+.stick .spacingS {
+  margin: 5px 0;
+}
+.margin-l {
+  margin-left: 47px;
+}
+input[type="radio"] {
+  height: 20px !important;
+  border: none !important;
+  display: inline;
+  box-shadow: none;
+  padding: 0;
+}
+select {
+  font-weight: bold;
+}
+select,
+option {
+  color: rgb(43, 88, 118);
+}
+
 .marginging {
   margin-top: 100px;
 }
 
 .contact-btn {
   margin: 10px 20px;
+  margin-top: 50px;
   padding: 10px 20px;
   border-radius: 20px;
   color: #fff;
@@ -96,6 +143,9 @@
   }
   .orderSec {
     width: 100%;
+  }
+  .margin-l {
+    margin-left: 0;
   }
   .orderSec .contact-btn {
     padding: 10px;

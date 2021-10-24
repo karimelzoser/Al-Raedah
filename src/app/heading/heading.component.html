@@ -43,6 +43,11 @@
             >عربى</a
           >
         </li>
+        <li>
+          <a style="cursor: pointer" (click)="navhome()">{{
+            "HOME" | translate
+          }}</a>
+        </li>
         <li class="dropdown" *ngIf="isAuthenticated">
           <a
             href="#"
@@ -108,6 +113,20 @@
                 style="cursor: pointer"
                 (click)="navOrder('network-order-list')"
                 >{{ "ORDERnetImpLIST" | translate }}</a
+              >
+            </li>
+            <li>
+              <a
+                style="cursor: pointer"
+                (click)="navOrder('graphic-order-list')"
+                >{{ "ORDERGraphicLIST" | translate }}</a
+              >
+            </li>
+            <li>
+              <a
+                style="cursor: pointer"
+                (click)="navOrder('courses-order-list')"
+                >{{ "ORDERCoursesLIST" | translate }}</a
               >
             </li>
             <li>

@@ -6,20 +6,22 @@ import { Subscription } from 'rxjs';
 import { AuthService } from 'src/app/auth/auth.service';
 import { DataStorageService } from 'src/app/shared/data-storage.service';
 import { FirestoreService } from 'src/app/shared/firestore.service';
-import { OrderSolve } from '../../orderSolve.model';
+import { OrderCourses } from '../../orderCourses.model';
 
 @Component({
-  selector: 'app-solve-order',
-  templateUrl: './solve-order.component.html',
-  styleUrls: ['./solve-order.component.css'],
+  selector: 'app-courses-order',
+  templateUrl: './courses-order.component.html',
+  styleUrls: ['./courses-order.component.css'],
 })
-export class SolveOrderComponent implements OnInit {
+export class CoursesOrderComponent implements OnInit {
   isAuthenticated = false;
   private userSub: Subscription;
   RTL: boolean = true;
-  orders: OrderSolve;
+  orders: OrderCourses;
   orderForm: FormGroup;
   showing: boolean;
+  graph;
+  otherss;
   serviceName;
   // services: any = [
   //   'مبيعات + نظام الفاتورة الالكترونية',
@@ -31,12 +33,11 @@ export class SolveOrderComponent implements OnInit {
   // servicesAr: any = [
   //   'Sales + Electronic Invoice System',
   //   'An integrated accounting system ERP',
-  //   'Ecommerce',
+  //   'electronic stores',
   //   'Accounting system and warehouse management',
   //   'Wedding hall management',
   // ];
   toggling;
-  graph;
 
   constructor(
     private router: Router,
@@ -51,10 +52,22 @@ export class SolveOrderComponent implements OnInit {
     this.serviceName = e.target.value;
     this.graph = e.target.value;
   }
+  checked() {
+    if ($('#lasted').is(':checked')) {
+      $('#cheko').removeAttr('disabled');
+      $('#cheko').focus();
+    } else if ($('#lasted').is(':checked')) {
+      $('#cheko').attr('disabled', 'disabled');
+    }
+  }
+
   ngOnInit(): void {
     window.scroll(0, 0);
     this.datastrg.getInfo().subscribe((value) => {
       this.toggling = value;
+    });
+    this.datastrg.getGraph().subscribe((value) => {
+      this.graph = value;
     });
     this.initOrderForm();
 
@@ -73,7 +86,7 @@ export class SolveOrderComponent implements OnInit {
   onSubmitOrder() {
     let orders = this.orderForm.value;
     console.log(orders);
-    this.firestoreService.create_newOrderSolve(orders);
+    this.firestoreService.create_newOrderCourses(orders);
     this.initOrderForm();
     this.formpop();
   }

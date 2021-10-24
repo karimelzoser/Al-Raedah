@@ -1,4 +1,4 @@
-export class OrderSolve {
+export class OrderCourses {
   id: string;
   public name: String;
   public companyName: String;
@@ -29,8 +29,8 @@ export class OrderSolve {
     this.address = address;
     this.service = service;
     this.phone = phone;
-    this.dserv = dserv;
     this.email = email;
+    this.dserv = dserv;
     this.timestamp = timestamp;
   }
 }

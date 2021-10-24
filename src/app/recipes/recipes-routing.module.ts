@@ -17,6 +17,7 @@ import { FactoryCardComponent } from './factory/factory-card/factory-card.compon
 import { FactoryProjComponent } from './factory/factory-proj/factory-proj.component';
 import { HomeComponent } from './home/home.component';
 import { BussinessOrderListComponent } from './order-list/bussiness-order-list/bussiness-order-list.component';
+import { CoursesOrderListComponent } from './order-list/courses-order-list/courses-order-list.component';
 import { EventOrderListComponent } from './order-list/event-order-list/event-order-list.component';
 import { GraphicOrderListComponent } from './order-list/graphic-order-list/graphic-order-list.component';
 import { MobileOrderListComponent } from './order-list/mobile-order-list/mobile-order-list.component';
@@ -26,6 +27,7 @@ import { OrderListComponent } from './order-list/order-list.component';
 import { SolveOrderListComponent } from './order-list/solve-order-list/solve-order-list.component';
 import { WebOrderListComponent } from './order-list/web-order-list/web-order-list.component';
 import { BussinessOrderComponent } from './order/bussiness-order/bussiness-order.component';
+import { CoursesOrderComponent } from './order/courses-order/courses-order.component';
 import { EventOrderComponent } from './order/event-order/event-order.component';
 import { GraphicOrderComponent } from './order/graphic-order/graphic-order.component';
 import { MobileOrderComponent } from './order/mobile-order/mobile-order.component';
@@ -157,6 +159,14 @@ const routes: Routes = [
       {
         path: 'order-list/graphic-design-order-list',
         component: GraphicOrderListComponent,
+      },
+      {
+        path: 'order/course-order',
+        component: CoursesOrderComponent,
+      },
+      {
+        path: 'order-list/courses-order-list',
+        component: CoursesOrderListComponent,
       },
       {
         path: 'blogs/:name/:id',

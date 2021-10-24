@@ -15,17 +15,17 @@ import { map } from 'rxjs/operators';
 import { finalize } from 'rxjs/operators';
 import { DataStorageService } from 'src/app/shared/data-storage.service';
 import { AuthService } from 'src/app/auth/auth.service';
-import { OrderGraphic } from '../../orderGraphic.model';
+import { OrderCourses } from '../../orderCourses.model';
 
 @Component({
-  selector: 'app-graphic-order-list',
-  templateUrl: './graphic-order-list.component.html',
-  styleUrls: ['./graphic-order-list.component.css'],
+  selector: 'app-courses-order-list',
+  templateUrl: './courses-order-list.component.html',
+  styleUrls: ['./courses-order-list.component.css'],
 })
-export class GraphicOrderListComponent implements OnInit {
+export class CoursesOrderListComponent implements OnInit {
   id;
   @Output() isClicked;
-  orders: OrderGraphic[];
+  orders: OrderCourses[];
   isAuthenticated = false;
   subscription: Subscription;
   date;
@@ -44,7 +44,7 @@ export class GraphicOrderListComponent implements OnInit {
   ) {}
 
   deleteOrder(id) {
-    this.firestoreService.delete_OrderGraphic(id);
+    this.firestoreService.delete_OrderCourses(id);
   }
   ngOnInit() {
     this.dataStorage.getInfo().subscribe((value) => {
@@ -52,7 +52,7 @@ export class GraphicOrderListComponent implements OnInit {
     });
 
     this.subscription = this.firestoreService
-      .get_allOrdersGraphic()
+      .get_allOrdersCourses()
       .subscribe((data) => {
         this.orders = data.map((e) => {
           return {
@@ -64,11 +64,7 @@ export class GraphicOrderListComponent implements OnInit {
             service: e.payload.doc.data()['service'],
             phone: e.payload.doc.data()['phone'],
             email: e.payload.doc.data()['email'],
-            motion: e.payload.doc.data()['motion'],
             dserv: e.payload.doc.data()['dserv'],
-            motionTime: e.payload.doc.data()['motionTime'],
-            lang: e.payload.doc.data()['lang'],
-            message: e.payload.doc.data()['message'],
 
             timestamp: e.payload.doc.data()['timestamp'],
           };
