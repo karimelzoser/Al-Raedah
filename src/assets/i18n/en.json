@@ -202,6 +202,22 @@
 "SAL10": "working on any device, whether it is a mobile phone (Android - iPhone) or computers",
 "SAL11": "- The ability to upload and save data in more than one way",
 
+
+"Single Commerce" : "Single Shop",
+"group commerce" : "Multi Shops",
+
+
+"delivery" : "Delivery",
+"stores" : "Store Managing",
+"employer" : "Add employers",
+"commpackage" : "Accounting Package",
+"webmob" : "Web & Mob",
+"dashbordsss" : "dashboard",
+"ecom": "online payment",
+"managment" : "management",
+"banners" : "Banners",
+
+
 "MORE" : "More Details",
 "ORDER" : "Order Service",
 "ORDERSOLVE" : "Problem Solving Order Service",

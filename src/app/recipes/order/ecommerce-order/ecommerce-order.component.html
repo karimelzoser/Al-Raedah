@@ -1,0 +1,745 @@
+<div class="covering">
+  <app-heading></app-heading>
+  <div class="orderSec">
+    <h3>{{ "ORDEREcommerce" | translate }}</h3>
+    <div class="forms" *ngIf="this.toggling === 'false'">
+      <form
+        id="send"
+        dir="rtl"
+        [formGroup]="orderForm"
+        (ngSubmit)="onSubmitOrder()"
+      >
+        <div class="col-xs-12 form-group">
+          <div class="col-xs-8">
+            <input
+              class="form-control input-lg"
+              type="text"
+              name="username"
+              id="name"
+              placeholder=""
+              formControlName="name"
+            />
+          </div>
+          <div class="col-xs-4">
+            <label for="username"
+              >{{ "username" | translate }} <span> *</span></label
+            >
+          </div>
+        </div>
+
+        <div class="col-xs-12 form-group">
+          <div class="col-xs-8">
+            <input
+              class="form-control input-lg"
+              type="text"
+              name="companyName"
+              id="companyName"
+              placeholder=""
+              formControlName="companyName"
+            />
+          </div>
+          <div class="col-xs-4">
+            <label for="companyName"
+              >{{ "companyName" | translate }} <span> *</span></label
+            >
+          </div>
+        </div>
+
+        <div class="col-xs-12 form-group">
+          <div class="col-xs-8">
+            <input
+              class="form-control input-lg"
+              type="text"
+              name="field"
+              id="field"
+              placeholder=""
+              formControlName="field"
+            />
+          </div>
+          <div class="col-xs-4">
+            <label for="field">{{ "field" | translate }} <span> *</span></label>
+          </div>
+        </div>
+
+        <div class="col-xs-12 form-group">
+          <div class="col-xs-8">
+            <input
+              class="form-control input-lg"
+              type="text"
+              name="address"
+              id="address"
+              placeholder=""
+              formControlName="address"
+            />
+          </div>
+          <div class="col-xs-4">
+            <label for="address"
+              >{{ "address" | translate }} <span> *</span></label
+            >
+          </div>
+        </div>
+        <div class="col-xs-12 form-group">
+          <div class="col-xs-8">
+            <input
+              class="form-control input-lg"
+              type="option"
+              name="phone"
+              id="phone"
+              placeholder=""
+              formControlName="phone"
+            />
+          </div>
+          <div class="col-xs-4">
+            <label for="phone">{{ "phone" | translate }} <span> *</span></label>
+          </div>
+        </div>
+        <div class="col-xs-12 form-group">
+          <div class="col-xs-8">
+            <input
+              class="form-control input-lg"
+              type="option"
+              name="email"
+              id="email"
+              placeholder=""
+              formControlName="email"
+            />
+          </div>
+          <div class="col-xs-4">
+            <label for="email">{{ "email" | translate }} <span> *</span></label>
+          </div>
+        </div>
+
+        <div class="col-xs-12 form-group marginging">
+          <label for="service"
+            >{{ "serviceCH" | translate }} <span> *</span></label
+          >
+          <select
+            class="form-control input-lg"
+            style="height: 47px !important"
+            (change)="changeCity($event)"
+            formControlName="service"
+          >
+            <option value="المتاجر الالكترونية">المتاجر الالكترونية</option>
+          </select>
+        </div>
+        <div>
+          <div>
+            <div class="col-xs-6 mar-b">
+              <div class="col-xs-9" style="padding: 0">
+                <label for="motion" style="padding: 0; font-size: 18px">{{
+                  "Single Commerce" | translate
+                }}</label>
+              </div>
+              <div class="col-xs-3" style="padding: 0">
+                <input
+                  type="radio"
+                  id="last"
+                  name="last"
+                  style="height: 15px !important"
+                  value="متجر واحد"
+                  class="form-control radioStyle"
+                  formControlName="dserv"
+                />
+              </div>
+            </div>
+            <div class="col-xs-6 mar-b">
+              <div class="col-xs-9" style="padding: 0">
+                <label for="motion" style="padding: 0; font-size: 18px">{{
+                  "group commerce" | translate
+                }}</label>
+              </div>
+              <div class="col-xs-3" style="padding: 0">
+                <input
+                  type="radio"
+                  id="last"
+                  name="last"
+                  style="height: 15px !important"
+                  value="مجموعة متاجر"
+                  class="form-control radioStyle"
+                  formControlName="dserv"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="fontas">
+            <div class="col-xs-12">
+              <div class="col-md-6 col-xs-12">
+                <input
+                  type="checkbox"
+                  id="delivery"
+                  name="delivery"
+                  formControlName="delivery"
+                  value="اضافة شركة شحن"
+                />
+                <label for="delivery">اضافة شركة شحن</label>
+              </div>
+              <div class="col-md-6 col-xs-12">
+                <input
+                  type="checkbox"
+                  id="webmob"
+                  name="webmob"
+                  formControlName="webmob"
+                  value="ويب + تطبيق جوال"
+                />
+                <label for="webmob">ويب + تطبيق جوال</label>
+              </div>
+              <div class="col-md-6 col-xs-12">
+                <input
+                  type="checkbox"
+                  id="banners"
+                  name="banners"
+                  formControlName="banners"
+                  value="تحكم اعلانات البنرات داخل المتجر"
+                />
+                <label for="banners">تحكم اعلانات البنرات داخل المتجر</label>
+              </div>
+              <div class="col-md-6 col-xs-12">
+                <input
+                  type="checkbox"
+                  id="ecom"
+                  name="ecom"
+                  formControlName="ecom"
+                  value="اضافة طرق بيع اون لاين"
+                />
+                <label for="ecom">اضافة طرق بيع اون لاين</label>
+              </div>
+              <div class="col-md-6 col-xs-12">
+                <input
+                  type="checkbox"
+                  id="dashboard"
+                  name="dashboard"
+                  formControlName="dashbordsss"
+                  value="لوحة تحكم لمتابعة الطلبات"
+                />
+                <label for="dashboard">لوحة تحكم لمتابعة الطلبات</label>
+              </div>
+              <div class="col-md-6 col-xs-12">
+                <input
+                  type="checkbox"
+                  id="management"
+                  name="management"
+                  formControlName="management"
+                  value="ادارة عمليات الشراء وحساب الموردين"
+                />
+                <label for="mangement"
+                  >ادارة عمليات الشراء وحساب الموردين</label
+                >
+              </div>
+
+              <div class="col-xs-12">
+                <input
+                  type="checkbox"
+                  id="employer"
+                  name="employer"
+                  formControlName="employer"
+                  value="اضافة موظفين لصلاحيات العمليات داخل المتجر"
+                />
+                <label for="employer"
+                  >اضافة موظفين لصلاحيات العمليات داخل المتجر</label
+                >
+              </div>
+              <div class="col-xs-12">
+                <input
+                  type="checkbox"
+                  id="commpackage"
+                  name="commpackage"
+                  formControlName="commpackage"
+                  value="الباقة المحاسبية (شجرة الحسابات , والميزانية , والمركز المالي )"
+                />
+                <label for="commpackage"
+                  >الباقة المحاسبية (شجرة الحسابات , والميزانية , والمركز المالي
+                  )</label
+                >
+              </div>
+              <div class="col-xs-12">
+                <input
+                  type="checkbox"
+                  id="stores"
+                  name="stores"
+                  formControlName="stores"
+                  value="دارة عمليات المخازن من استلام , وجرد , وصرف"
+                />
+                <label for="stores"
+                  >ادارة عمليات المخازن من استلام , وجرد , وصرف</label
+                >
+              </div>
+            </div>
+          </div>
+          <div class="padaia">
+            <div class="col-md-6 col-xs-12" style="margin-top: 15px">
+              <p>متعدد اللغات ( عربي , انجليزي )</p>
+            </div>
+            <div class="col-md-6 col-xs-12" style="margin-top: 15px">
+              <p>استقبال رسائل التحقق للتسجيل</p>
+            </div>
+            <div class="col-xs-12">
+              <p>روابط حساب المؤسسة على مواقع التواصل</p>
+            </div>
+            <div class="col-xs-12">
+              <p>
+                مكتبة صور وفيديو منسقة ومنظمة على شكل تصنيفات ويمكن تحديد عدد لا
+                محدود من التصنيفات وعدد غير محدود من الصور ضمن كل تصنيف عن طريق
+                نظام ادارة المحتوى
+              </p>
+            </div>
+            <div class="col-xs-12">
+              <p>
+                ستعراض المنتجات عن طريق :( اسم المستلزمات - الشركة - الوصف -
+                سعره - البلد المصنع - توافره أو انتهائه - توصيات باستخدامه).
+              </p>
+            </div>
+
+            <div class="col-md-6 col-xs-12">
+              <p>طلب المستلزمات والمنتجات.</p>
+            </div>
+            <div class="col-md-6 col-xs-12">
+              <p>الطلب عن طريق شريط الاشعارات</p>
+            </div>
+
+            <div class="col-md-6 col-xs-12">
+              <p>استخدام قسائم شرائية</p>
+            </div>
+            <div class="col-md-6 col-xs-12">
+              <p>تصوير المنتجات ثلاثي الابعاد أو تصوير عادي</p>
+            </div>
+            <div class="col-md-6 col-xs-12">
+              <p>تتبع الطلبات</p>
+            </div>
+            <div class="col-md-6 col-xs-12">
+              <p>تحديد الكمية ضمن الحد الادنى والاقصى للطلبات</p>
+            </div>
+
+            <div class="col-xs-12">
+              <p>استعراض العروض والهدايا المقدمة</p>
+            </div>
+            <div class="col-xs-12">
+              <p>
+                ستعراض تفاصيل الطلبات(المنتجات-الكميات-بيانات
+                العميل-الاجمالي-كود الخصم) عرض فاتورة العميل وطباعتها
+              </p>
+            </div>
+            <div class="col-md-6 col-xs-12">
+              <p>تغيير حالة الطلب</p>
+            </div>
+            <div class="col-md-6 col-xs-12">
+              <p>تجهيز طلبيات</p>
+            </div>
+            <div class="col-md-6 col-xs-12">
+              <p>المنتجات انتهت تاريخ الصلاحية</p>
+            </div>
+            <div class="col-md-6 col-xs-12">
+              <p>استعراض المنتجات</p>
+            </div>
+            <div class="col-md-6 col-xs-12">
+              <p>ترتيب المنتجات حسب الكميات المتاح منها</p>
+            </div>
+            <div class="col-md-6 col-xs-12">
+              <p>المنتجات الأكثر طلبا</p>
+            </div>
+            <div class="col-md-6 col-xs-12">
+              <p>اجمالي الربح من المنتج</p>
+            </div>
+            <div class="col-md-6 col-xs-12">
+              <p>اجمالي المصاريف على المنتج</p>
+            </div>
+            <div class="col-md-6 col-xs-12">
+              <p>تقرير المبيعات المفصلة خلال فترة معينة</p>
+            </div>
+            <div class="col-md-6 col-xs-12">
+              <p>تقرير المبيعات الاجمالية</p>
+            </div>
+            <div class="col-xs-12">
+              <p>تقارير المرتجعات</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-6">
+          <button
+            class="contact-btn"
+            style="float: left"
+            [disabled]="!orderForm.valid"
+            type="submit"
+            name="text"
+            value="Send"
+          >
+            {{ "SENDORDER" | translate }}
+          </button>
+        </div>
+      </form>
+    </div>
+    <div class="formsAr" *ngIf="this.toggling === 'true'">
+      <form
+        id="send"
+        dir="ltr"
+        [formGroup]="orderForm"
+        (ngSubmit)="onSubmitOrder()"
+      >
+        <div class="col-xs-12 form-group">
+          <div class="col-xs-4">
+            <label for="username"
+              >{{ "username" | translate }} <span> *</span></label
+            >
+          </div>
+          <div class="col-xs-8">
+            <input
+              class="form-control input-lg"
+              type="text"
+              name="username"
+              id="name"
+              placeholder=""
+              formControlName="name"
+            />
+          </div>
+        </div>
+
+        <div class="col-xs-12 form-group">
+          <div class="col-xs-4">
+            <label for="companyName"
+              >{{ "companyName" | translate }} <span> *</span></label
+            >
+          </div>
+          <div class="col-xs-8">
+            <input
+              class="form-control input-lg"
+              type="text"
+              name="companyName"
+              id="companyName"
+              placeholder=""
+              formControlName="companyName"
+            />
+          </div>
+        </div>
+
+        <div class="col-xs-12 form-group">
+          <div class="col-xs-4">
+            <label for="field">{{ "field" | translate }} <span> *</span></label>
+          </div>
+          <div class="col-xs-8">
+            <input
+              class="form-control input-lg"
+              type="text"
+              name="field"
+              id="field"
+              placeholder=""
+              formControlName="field"
+            />
+          </div>
+        </div>
+
+        <div class="col-xs-12 form-group">
+          <div class="col-xs-4">
+            <label for="address"
+              >{{ "address" | translate }} <span> *</span></label
+            >
+          </div>
+          <div class="col-xs-8">
+            <input
+              class="form-control input-lg"
+              type="text"
+              name="address"
+              id="address"
+              placeholder=""
+              formControlName="address"
+            />
+          </div>
+        </div>
+        <div class="col-xs-12 form-group">
+          <div class="col-xs-4">
+            <label for="phone">{{ "phone" | translate }} <span> *</span></label>
+          </div>
+          <div class="col-xs-8">
+            <input
+              class="form-control input-lg"
+              type="option"
+              name="phone"
+              id="phone"
+              placeholder=""
+              formControlName="phone"
+            />
+          </div>
+        </div>
+        <div class="col-xs-12 form-group">
+          <div class="col-xs-4">
+            <label for="email">{{ "email" | translate }} <span> *</span></label>
+          </div>
+          <div class="col-xs-8">
+            <input
+              class="form-control input-lg"
+              type="option"
+              name="email"
+              id="email"
+              placeholder=""
+              formControlName="email"
+            />
+          </div>
+        </div>
+        <div class="col-xs-12 form-group marginging">
+          <label for="service"
+            >{{ "serviceCH" | translate }} <span> *</span></label
+          >
+          <select
+            class="form-control input-lg"
+            style="height: 47px !important"
+            (change)="changeCity($event)"
+            formControlName="service"
+          >
+            <option value="Ecommerce">Ecommerce</option>
+          </select>
+        </div>
+        <div>
+          <div class="col-xs-6">
+            <div class="col-xs-3" style="padding: 0">
+              <input
+                type="radio"
+                id="last"
+                name="last"
+                style="height: 15px !important"
+                value="Single Commerce"
+                class="form-control radioStyle"
+                formControlName="dserv"
+              />
+            </div>
+            <div class="col-xs-9" style="padding: 0">
+              <label for="motion" style="padding: 0; font-size: 18px">{{
+                "Single Commerce" | translate
+              }}</label>
+            </div>
+          </div>
+          <div class="col-xs-6">
+            <div class="col-xs-3" style="padding: 0">
+              <input
+                type="radio"
+                id="last"
+                name="last"
+                style="height: 15px !important"
+                value="Group Commerce"
+                class="form-control radioStyle"
+                formControlName="dserv"
+              />
+            </div>
+            <div class="col-xs-9" style="padding: 0">
+              <label for="motion" style="padding: 0; font-size: 18px">{{
+                "group commerce" | translate
+              }}</label>
+            </div>
+          </div>
+          <div class="fontas">
+            <div class="col-xs-12">
+              <div class="col-md-6 col-xs-12">
+                <input
+                  type="checkbox"
+                  id="delivery"
+                  name="delivery"
+                  formControlName="delivery"
+                  value="Add a shipping company"
+                />
+                <label for="delivery">Add a shipping company</label>
+              </div>
+              <div class="col-md-6 col-xs-12">
+                <input
+                  type="checkbox"
+                  id="webmob"
+                  name="webmob"
+                  formControlName="webmob"
+                  value="Web + mobile app"
+                />
+                <label for="webmob">Web + mobile app</label>
+              </div>
+              <div class="col-md-6 col-xs-12">
+                <input
+                  type="checkbox"
+                  id="banners"
+                  name="banners"
+                  formControlName="banners"
+                  value="Banner ads control inside the store"
+                />
+                <label for="banners">Banner ads control inside the store</label>
+              </div>
+              <div class="col-md-6 col-xs-12">
+                <input
+                  type="checkbox"
+                  id="ecom"
+                  name="ecom"
+                  formControlName="ecom"
+                  value="Add online selling methods"
+                />
+                <label for="ecom">Add online selling methods</label>
+              </div>
+              <div class="col-md-6 col-xs-12">
+                <input
+                  type="checkbox"
+                  id="dashboard"
+                  name="dashboard"
+                  formControlName="dashbordsss"
+                  value="Control panel to track orders"
+                />
+
+                <label for="dashboard">Control panel to track orders</label>
+              </div>
+              <div class="col-md-6 col-xs-12">
+                <input
+                  type="checkbox"
+                  id="management"
+                  name="management"
+                  formControlName="management"
+                  value="Managing purchases and supplier accounts"
+                />
+                <label for="mangement"
+                  >Managing purchases and supplier accounts</label
+                >
+              </div>
+
+              <div class="col-xs-12">
+                <input
+                  type="checkbox"
+                  id="employer"
+                  name="employer"
+                  formControlName="employer"
+                  value="Adding employees to the powers of operations within the store"
+                />
+                <label for="employer"
+                  >Adding employees to the powers of operations within the
+                  store</label
+                >
+              </div>
+              <div class="col-xs-12">
+                <input
+                  type="checkbox"
+                  id="commpackage"
+                  name="commpackage"
+                  formControlName="commpackage"
+                  value="الباقة المحاسبية (شجرة الحسابات , والميزانية , والمركز المالي )"
+                />
+                <label for="commpackage">
+                  Accounting Package (Accounts Tree, Budget, and Financial
+                  Position)</label
+                >
+              </div>
+              <div class="col-xs-12">
+                <input
+                  type="checkbox"
+                  id="stores"
+                  name="stores"
+                  formControlName="stores"
+                  value="Managing warehouse operations from receiving, inventory, and disbursement"
+                />
+                <label for="stores"
+                  >اManaging warehouse operations from receiving, inventory, and
+                  disbursement</label
+                >
+              </div>
+            </div>
+          </div>
+          <div class="padaia">
+            <div class="col-md-6 col-xs-12" style="margin-top: 15px">
+              <p>Multilingual (Arabic, English)</p>
+            </div>
+            <div class="col-md-6 col-xs-12" style="margin-top: 15px">
+              <p>Receive verification messages for registration</p>
+            </div>
+            <div class="col-xs-12">
+              <p>
+                Links to the organization's account on the social networking
+                sites
+              </p>
+            </div>
+            <div class="col-xs-12">
+              <p>
+                A library of images and video formatted and organized in the
+                form of categories, and you can specify a number of A limited
+                number of categories and an unlimited number of images within
+                each category by content management system
+              </p>
+            </div>
+            <div class="col-xs-12">
+              <p>
+                Browse the products by: (the name of the supplies - the company
+                - the description - Its price - country of manufacture -
+                availability or expiration - recommendations for its use).
+              </p>
+            </div>
+
+            <div class="col-md-6 col-xs-12">
+              <p>Order supplies and products.</p>
+            </div>
+            <div class="col-md-6 col-xs-12">
+              <p>Order via the notification bar</p>
+            </div>
+
+            <div class="col-md-6 col-xs-12">
+              <p>Use vouchers</p>
+            </div>
+            <div class="col-md-6 col-xs-12">
+              <p>3D product photography or normal photography</p>
+            </div>
+            <div class="col-md-6 col-xs-12">
+              <p>Order Tracking</p>
+            </div>
+            <div class="col-md-6 col-xs-12">
+              <p>
+                Determine the quantity within the minimum and maximum orders
+              </p>
+            </div>
+
+            <div class="col-xs-12">
+              <p>Browse the offers and gifts offered</p>
+            </div>
+            <div class="col-xs-12">
+              <p>
+                View order details (products-quantities-data
+                Customer-total-discount code) View and print customer invoice
+              </p>
+            </div>
+            <div class="col-md-6 col-xs-12">
+              <p>Change order status</p>
+            </div>
+            <div class="col-md-6 col-xs-12">
+              <p>Processing orders</p>
+            </div>
+            <div class="col-md-6 col-xs-12">
+              <p>Products have expired</p>
+            </div>
+            <div class="col-md-6 col-xs-12">
+              <p>Product reviews</p>
+            </div>
+            <div class="col-md-6 col-xs-12">
+              <p>Arrange the products according to the available quantities</p>
+            </div>
+            <div class="col-md-6 col-xs-12">
+              <p>Most Wanted Products</p>
+            </div>
+            <div class="col-md-6 col-xs-12">
+              <p>Total profit from the product</p>
+            </div>
+            <div class="col-md-6 col-xs-12">
+              <p>Total cost on the product</p>
+            </div>
+            <div class="col-md-6 col-xs-12">
+              <p>Detailed sales report during a certain period</p>
+            </div>
+            <div class="col-md-6 col-xs-12">
+              <p>Total sales report</p>
+            </div>
+            <div class="col-xs-12">
+              <p>Returns Reports</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-12">
+          <button
+            class="contact-btn"
+            style="float: right !important"
+            [disabled]="!orderForm.valid"
+            type="submit"
+            name="text"
+            value="Send"
+          >
+            {{ "SENDORDER" | translate }}
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

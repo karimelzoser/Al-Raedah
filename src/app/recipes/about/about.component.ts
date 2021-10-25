@@ -69,7 +69,7 @@ export class AboutComponent implements OnInit {
     this.router.navigate(['/order/bussiness-order']);
   }
   formpopE() {
-    this.router.navigate(['/order/solve-problems-order']);
+    this.router.navigate(['/order/ecommerce-order']);
   }
   formpopN() {
     this.router.navigate(['/order/network-order']);

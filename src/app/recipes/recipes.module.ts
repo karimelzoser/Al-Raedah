@@ -54,6 +54,8 @@ import { GraphicOrderListComponent } from './order-list/graphic-order-list/graph
 import { GraphicOrderComponent } from './order/graphic-order/graphic-order.component';
 import { CoursesOrderComponent } from './order/courses-order/courses-order.component';
 import { CoursesOrderListComponent } from './order-list/courses-order-list/courses-order-list.component';
+import { EcommerceOrderComponent } from './order/ecommerce-order/ecommerce-order.component';
+import { EcommerceOrderListComponent } from './order-list/ecommerce-order-list/ecommerce-order-list.component';
 
 @NgModule({
   declarations: [
@@ -103,6 +105,8 @@ import { CoursesOrderListComponent } from './order-list/courses-order-list/cours
     GraphicOrderComponent,
     CoursesOrderComponent,
     CoursesOrderListComponent,
+    EcommerceOrderComponent,
+    EcommerceOrderListComponent,
   ],
   imports: [
     RouterModule,

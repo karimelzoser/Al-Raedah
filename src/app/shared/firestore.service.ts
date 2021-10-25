@@ -100,6 +100,14 @@ export class FirestoreService {
       .snapshotChanges()
       .pipe(take(2));
   }
+  get_allOrdersEcommerce() {
+    return this.fireservices
+      .collection('orderListEcommerce', (ref) =>
+        ref.orderBy('timestamp', 'desc')
+      )
+      .snapshotChanges()
+      .pipe(take(2));
+  }
 
   get_allBlogs() {
     return this.fireservices
@@ -153,6 +161,9 @@ export class FirestoreService {
   }
   create_newOrderCourses(orders) {
     return this.fireservices.collection('orderListCourses').add(orders);
+  }
+  create_newOrderEcommerce(orders) {
+    return this.fireservices.collection('orderListEcommerce').add(orders);
   }
 
   // createProject(project, recipe) {
@@ -241,6 +252,9 @@ export class FirestoreService {
   }
   delete_OrderCourses(Id) {
     this.fireservices.doc('orderListCourses/' + Id).delete();
+  }
+  delete_OrderEcommerce(Id) {
+    this.fireservices.doc('orderListEcommerce/' + Id).delete();
   }
   delete_Order(Id) {
     this.fireservices.doc('orderList/' + Id).delete();
