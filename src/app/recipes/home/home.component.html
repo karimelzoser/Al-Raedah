@@ -172,7 +172,14 @@
   <!-- Video Section  -->
   <header class="video-section block">
     <div class="video">
-      <video autoplay [muted]="'muted'" loop="false" width="100%">
+      <video
+        autoplay="true"
+        id="vidcover"
+        playsinline
+        [muted]="'muted'"
+        loop="false"
+        width="100%"
+      >
         <source type="video/mp4" src="assets/video/cover.mp4" />
       </video>
       <div
