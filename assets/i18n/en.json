@@ -157,6 +157,7 @@
 "COUDE7" : "- Use Basics of J.S",
 "COUDE9" : "- Systems Analysis",
 "Place" : "Place" ,
+"Plasce" : "Place" ,
 
 "ERP1" : "Selling Course Package",
 "ERP2" : "Industry System",
@@ -201,6 +202,22 @@
 "SAL9": "The ability to connect with any type of external printer",
 "SAL10": "working on any device, whether it is a mobile phone (Android - iPhone) or computers",
 "SAL11": "- The ability to upload and save data in more than one way",
+
+
+"Single Commerce" : "Single Shop",
+"group commerce" : "Multi Shops",
+
+
+"delivery" : "Delivery",
+"stores" : "Store Managing",
+"employer" : "Add employers",
+"commpackage" : "Accounting Package",
+"webmob" : "Web & Mob",
+"dashbordsss" : "dashboard",
+"ecom": "online payment",
+"managment" : "management",
+"banners" : "Banners",
+
 
 "MORE" : "More Details",
 "ORDER" : "Order Service",
