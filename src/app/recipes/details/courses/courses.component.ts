@@ -17,7 +17,7 @@ export class CoursesComponent implements OnInit {
   ) {}
 
   navOrd() {
-    this.router.navigate(['../order'], {
+    this.router.navigate(['../order/course-order'], {
       relativeTo: this.route,
     });
   }

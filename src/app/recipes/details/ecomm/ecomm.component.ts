@@ -17,13 +17,14 @@ export class EcommComponent implements OnInit {
   ) {}
 
   navOrd() {
-    this.router.navigate(['../order'], {
+    this.router.navigate(['../order/ecommerce-order'], {
       relativeTo: this.route,
     });
   }
   Cclick() {
     this.datastrg.setAudio(this.audioEcomm);
   }
+  // asd
   ngOnInit(): void {
     window.scroll(0, 0);
   }

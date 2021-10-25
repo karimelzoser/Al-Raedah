@@ -17,7 +17,7 @@ export class GraphicComponent implements OnInit {
   ) {}
 
   navOrd() {
-    this.router.navigate(['../order'], {
+    this.router.navigate(['../order/graphic-design-order'], {
       relativeTo: this.route,
     });
   }

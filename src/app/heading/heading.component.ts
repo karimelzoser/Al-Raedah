@@ -25,7 +25,7 @@ export class HeadingComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute
   ) {}
-
+  // asd
   navhome() {
     this.router.navigate(['/home']);
   }

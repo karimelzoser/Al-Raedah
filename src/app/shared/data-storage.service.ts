@@ -50,7 +50,7 @@ export class DataStorageService {
     console.log(this.audioPlay);
     this.audioPlay?.play();
   }
-
+  //asd
   getShow(): Observable<string> {
     return this.showing.asObservable();
   }

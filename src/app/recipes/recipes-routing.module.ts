@@ -106,6 +106,7 @@ const routes: Routes = [
         path: 'order-list/solve-problems-order-list',
         component: SolveOrderListComponent,
       },
+
       {
         path: 'order/security-order',
         component: NetworkOrderComponent,
@@ -166,6 +167,7 @@ const routes: Routes = [
         path: 'order/course-order',
         component: CoursesOrderComponent,
       },
+      //asdasd
       {
         path: 'order-list/courses-order-list',
         component: CoursesOrderListComponent,

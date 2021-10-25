@@ -74,6 +74,7 @@ export class AboutComponent implements OnInit {
   formpopN() {
     this.router.navigate(['/order/network-order']);
   }
+  // asd
   formpopG() {
     this.router.navigate(['/order/graphic-design-order']);
   }

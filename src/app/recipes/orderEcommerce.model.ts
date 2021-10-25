@@ -18,7 +18,7 @@ export class OrderEcommerce {
   public commpackage: string;
   public stores: string;
   public timestamp: any;
-
+  //asd
   constructor(
     id: string,
     name: String,
